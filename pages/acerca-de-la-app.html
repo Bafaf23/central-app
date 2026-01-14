@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icono -->
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
     <!-- tailwindcss -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- fontawesone -->
@@ -12,9 +14,144 @@
     ></script>
     <!-- link css externo -->
     <link rel="stylesheet" href="../asset/css/style.css" />
-    <!-- icono -->
-    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+
     <title>Acerca de | CM</title>
   </head>
-  <body></body>
+  <body>
+    <!-- wrapper -->
+    <div class="flex flex-col justify-between min-h-screen">
+      <!-- header -->
+      <header class="p-3 border border-gray-100 rounded-b-2xl">
+        <!-- boton de volver -->
+        <div class="cursor-pointer overflow-hidden">
+          <a
+            href="../pages/perfil.html"
+            class="flex items-center gap-1 text-red-500"
+          >
+            <i class="fa-solid fa-chevron-left text-base"></i>
+            <p class="leading-none pb-0.5">volver</p>
+          </a>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+        <!-- barra de separacion -->
+        <div>
+          <hr class="border-t border-gray-100 w-40 mx-auto" />
+        </div>
+        <!-- datos de la empresa -->
+        <section>
+          <div
+            class="bg-white border shadow border-gray-100 p-2 rounded-md flex flex-col items-center gap-1"
+          >
+            <!-- logo  -->
+            <div class="w-35 h-fit overflow-hidden rounded-full">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnANtNRk0tdhnkfd0kYaT7rXkDO65LEqb8xQ&s"
+                alt="totem central"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- nombre  -->
+            <div class="flex flex-col gap-1 items-center">
+              <h2 class="text-2xl text-red-500 font-bold">
+                Central Madeirense, C.A
+              </h2>
+              <div
+                class="flex flex-col gap-2 items-center bg-gray-100 p-1 rounded-md"
+              >
+                <p class="text-gray-600">
+                  <i class="fa-regular fa-address-card text-orange-300"></i>
+                  J-<span class="font-bold">00006275-7</span>
+                </p>
+                <p class="text-gray-600 text-sm text-center">
+                  <i class="fa-solid fa-location-dot text-orange-300"></i>
+                  CENTRO CM, CARRETERA PETARE- STA. LUCÍA KM 5, FILAS DE
+                  MARICHE. CARACAS, VENEZUELA
+                </p>
+              </div>
+              <span class="text-gray-600">
+                <i class="fa-solid fa-circle-info text-orange-300"></i>
+                V1.2.0 (2026)
+              </span>
+            </div>
+          </div>
+        </section>
+        <!-- detalle de la app -->
+        <section class="flex flex-col gap-2 p-2">
+          <h3
+            class="text-xs font-bold uppercase tracking-widest text-orange-600"
+          >
+            Sobre la app web
+          </h3>
+          <!-- contenedor grid -->
+          <div class="grid grid-cols-2 gap-2">
+            <!-- card -->
+            <div
+              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
+            >
+              <span class="text-2xl text-orange-400">
+                <i class="fa-solid fa-circle-arrow-down"></i>
+              </span>
+              <h2 class="text-gray-400">Ultima actualizacion</h2>
+              <span class="text-red-600 font-bold">23/12/2025</span>
+            </div>
+            <!-- card -->
+            <div
+              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
+            >
+              <span class="text-2xl text-orange-400">
+                <i class="fa-solid fa-building-circle-check"></i>
+              </span>
+              <h2 class="text-gray-400">ID de Compilación</h2>
+              <span class="text-red-600 font-bold">1024</span>
+            </div>
+            <!-- card desarrollado -->
+            <div
+              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center col-span-2"
+            >
+              <span class="text-2xl text-orange-400">
+                <i class="fa-solid fa-code"></i>
+              </span>
+              <h2 class="text-gray-400">Desarrollado por:</h2>
+              <span class="text-green-600 font-bold">Bryant Facenda</span>
+            </div>
+          </div>
+        </section>
+        <!-- terminos y condiciones -->
+        <section class="flex flex-col gap-2 p-2">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-red-600">
+            Aspectos legales
+          </h3>
+
+          <div
+            class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+          >
+            <!-- terminos y condiciones -->
+            <a
+              href="#"
+              class="flex items-center justify-between p-4 active:bg-gray-50 border-b border-gray-50"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-blue-50 p-2 rounded-lg text-blue-600">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <span class="text-sm font-semibold text-gray-700"
+                  >Ternimos y condisiones</span
+                >
+              </div>
+              <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+            </a>
+          </div>
+          <!-- Botón Cerrar Sesión -->
+          <button
+            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 rounded-2xl active:scale-95 transition-transform"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Cerrar Sesión
+          </button>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
