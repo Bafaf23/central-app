@@ -21,9 +21,15 @@
         <div
           class="flex justify-between items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow"
         >
-          <!-- avatar user -->
+          <!-- boton de volver -->
           <div class="cursor-pointer overflow-hidden">
-            <i class="fa-solid fa-left-long text-2xl text-red-500"></i>
+            <a
+              href="../index.html"
+              class="flex items-center gap-1 text-red-500"
+            >
+              <i class="fa-solid fa-chevron-left text-base"></i>
+              <p class="leading-none pb-0.5">volver</p>
+            </a>
           </div>
           <!-- logo de la empresa -->
           <div class="w-25 overflow-hidden">
@@ -102,7 +108,7 @@
         <!-- datos del usurio -->
         <section>
           <div
-            class="bg-gray-100 p-2 rounded-md flex flex-col items-center gap-1"
+            class="bg-gray-100 border border-gray-200 p-2 rounded-md flex flex-col items-center gap-1"
           >
             <div class="w-25 h-25 overflow-hidden rounded-full">
               <img
@@ -112,18 +118,20 @@
               />
             </div>
             <!-- nombre del usuario -->
-            <div>
+            <div class="flex flex-col gap-1 items-center">
               <h2 class="text-3xl text-red-500 font-bold">Bryant Facenda</h2>
-              <p class="text-center text-gray-500">
-                V-<span class="font-bold">30021867</span>
-              </p>
-              <p class="text-gray-500 text-center">23/09/2003</p>
+              <div class="flex gap-2 justify-center">
+                <p class="text-gray-600">
+                  V-<span class="font-bold">30021768</span>
+                </p>
+                <span class="text-gray-600">23/09/2023</span>
+              </div>
+              <span class="text-gray-600">bryantffacen@gmail.com</span>
             </div>
           </div>
         </section>
 
         <!-- Sección de Historial de Compras -->
-
         <section class="flex flex-col gap-4 p-4">
           <!-- titulo -->
           <div class="flex items-center justify-between">
@@ -134,7 +142,7 @@
             >
           </div>
 
-          <!-- Tarjeta de Pedido 1 (En Camino) -->
+          <!-- Tarjeta de Pedido 1 -->
           <div
             class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm relative overflow-hidden"
           >
@@ -142,7 +150,7 @@
             <div
               class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
             >
-              Comprado
+              Pago Exitoso
             </div>
 
             <div class="flex gap-4">
@@ -154,7 +162,7 @@
               </div>
               <!-- info de la compra -->
               <div class="flex-1">
-                <p class="text-xs text-gray-400 font-bold">Pedido #CM-8829</p>
+                <p class="text-xs text-gray-400 font-bold">Orden #CM44-8829</p>
                 <h4 class="text-sm font-bold text-gray-800">
                   Sede La Lagunita
                 </h4>
@@ -163,7 +171,7 @@
                 </p>
               </div>
             </div>
-
+            <!-- total pagado -->
             <div
               class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50"
             >
@@ -171,34 +179,40 @@
                 <p class="text-[10px] text-gray-400 font-bold uppercase">
                   Total pagado
                 </p>
+                <!-- monto -->
                 <div class="flex items-baseline gap-1">
                   <span class="text-sm font-bold text-gray-500">Bs.</span>
                   <span class="text-lg font-black text-gray-900">1.450,00</span>
                 </div>
               </div>
+              <button
+                class="bg-white p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
 
           <!-- Tarjeta de Pedido 2 (Entregado / Con Cashea) -->
           <div
-            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm opacity-90"
+            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm opacity-90 relative overflow-hidden"
           >
             <!-- Indicador de estado -->
             <div
-              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase z-10"
+              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
             >
-              Comprado
+              Pago Exitoso
             </div>
 
             <div class="flex gap-4">
               <div
-                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-gray-400 text-2xl"
+                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-2xl text-red-600"
               >
-                <i class="fa-solid fa-cart-check"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
               </div>
 
               <div class="flex-1">
-                <p class="text-xs text-gray-400 font-bold">Pedido #CM-7712</p>
+                <p class="text-xs text-gray-400 font-bold">Pedido #CM09-7712</p>
                 <h4 class="text-sm font-bold text-gray-800">
                   Sede Los Cortijos
                 </h4>
