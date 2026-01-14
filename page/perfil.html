@@ -10,7 +10,10 @@
       src="https://kit.fontawesome.com/a74559d35e.js"
       crossorigin="anonymous"
     ></script>
-
+    <!-- link css externo -->
+    <link rel="stylesheet" href="../asset/css/style.css" />
+    <!-- icono -->
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
     <title>Central Madeirense | Perfil</title>
   </head>
   <body>
@@ -42,9 +45,26 @@
           <!-- carrito y notificaciones -->
           <div class="flex gap-2 text-2xl">
             <!-- campana -->
-            <i class="fa-solid fa-bell text-orange-400"></i>
+            <a href="">
+              <div class="relative">
+                <i class="fa-solid fa-bell text-orange-400"></i>
+                <span
+                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center"
+                  >+9</span
+                >
+              </div>
+            </a>
+
             <!-- carrito -->
-            <i class="fa-solid fa-cart-shopping text-red-600"></i>
+            <a href="">
+              <div class="relative">
+                <i class="fa-solid fa-cart-shopping text-red-600"></i>
+                <span
+                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center"
+                  >12</span
+                >
+              </div>
+            </a>
           </div>
         </div>
       </header>
@@ -69,7 +89,7 @@
               </p>
               <div class="flex items-center gap-1">
                 <span class="text-sm font-bold text-gray-800"
-                  >Central Madeirense - La lagunita</span
+                  >Central Madeirense - La Lagunita</span
                 >
                 <i
                   class="fa-solid fa-chevron-down text-[10px] text-red-600"
@@ -87,7 +107,7 @@
               Ver precios en:
             </p>
             <div
-              class="flex items-center gap-1 w-full bg-gray-100 rounded-full p-1"
+              class="flex items-center gap-3 w-full bg-gray-100 rounded-full p-1 cursor-pointer"
             >
               <!-- icono -->
               <div class="bg-green-200 p-1 rounded-full text-green-600">
@@ -108,8 +128,14 @@
         <!-- datos del usurio -->
         <section>
           <div
-            class="bg-gray-100 border border-gray-200 p-2 rounded-md flex flex-col items-center gap-1"
+            class="bg-gray-100 border border-gray-200 p-2 rounded-md flex flex-col items-center gap-1 relative"
           >
+            <button
+              class="absolute right-2 top-1 text-xl text-gray-500 cursor-pointer hover:text-gray-600"
+            >
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <!-- Imge de perfil  -->
             <div class="w-25 h-25 overflow-hidden rounded-full">
               <img
                 src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
@@ -122,15 +148,21 @@
               <h2 class="text-3xl text-red-500 font-bold">Bryant Facenda</h2>
               <div class="flex gap-2 justify-center">
                 <p class="text-gray-600">
+                  <i class="fa-regular fa-address-card text-orange-300"></i>
                   V-<span class="font-bold">30021768</span>
                 </p>
-                <span class="text-gray-600">23/09/2023</span>
+                <span class="text-gray-600">
+                  <i class="fa-regular fa-calendar-days text-orange-300"></i>
+                  23/09/2023
+                </span>
               </div>
-              <span class="text-gray-600">bryantffacen@gmail.com</span>
+              <span class="text-gray-600">
+                <i class="fa-regular fa-envelope text-orange-300"></i>
+                bryantffacen@gmail.com
+              </span>
             </div>
           </div>
         </section>
-
         <!-- Sección de Historial de Compras -->
         <section class="flex flex-col gap-4 p-4">
           <!-- titulo -->
@@ -246,6 +278,60 @@
               </div>
             </div>
           </div>
+        </section>
+        <!-- barra de separacion -->
+        <div>
+          <hr class="border-t border-gray-100 w-40 mx-auto" />
+        </div>
+        <!-- Configuración e Información -->
+        <section class="flex flex-col gap-2 p-4">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-red-600">
+            Ajustes y Soporte
+          </h3>
+
+          <div
+            class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+          >
+            <!-- Botón Acerca de la App (Opción 1 elegida) -->
+            <a
+              href="#"
+              class="flex items-center justify-between p-4 active:bg-gray-50 border-b border-gray-50"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-blue-50 p-2 rounded-lg text-blue-600">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <span class="text-sm font-semibold text-gray-700"
+                  >Acerca de la aplicación</span
+                >
+              </div>
+              <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+            </a>
+
+            <!-- Soporte -->
+            <a
+              href="www.centralmadeirense.com.ve"
+              target="_blank"
+              class="flex items-center justify-between p-4 active:bg-gray-50"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-green-50 p-2 rounded-lg text-green-600">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <span class="text-sm font-semibold text-gray-700"
+                  >Atención al Cliente</span
+                >
+              </div>
+              <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+            </a>
+          </div>
+          <!-- Botón Cerrar Sesión -->
+          <button
+            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 rounded-2xl active:scale-95 transition-transform"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Cerrar Sesión
+          </button>
         </section>
       </main>
     </div>
