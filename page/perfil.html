@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Central Madeirense | Perfil</title>
+  </head>
+  <body>
+    <!-- wrapper -->
+    <div class="flex flex-col justify-between min-h-screen">
+      <!-- header -->
+      <header>
+        <div
+          class="flex justify-between items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow"
+        >
+          <!-- avatar user -->
+          <div class="cursor-pointer overflow-hidden">
+            <i class="fa-solid fa-left-long text-2xl text-red-500"></i>
+          </div>
+          <!-- logo de la empresa -->
+          <div class="w-25 overflow-hidden">
+            <img
+              src="../asset/svg/Logo_centralmadirense.svg"
+              alt="Central Madeirense"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <!-- carrito y notificaciones -->
+          <div class="flex gap-2 text-2xl">
+            <!-- campana -->
+            <i class="fa-solid fa-bell text-orange-400"></i>
+            <!-- carrito -->
+            <i class="fa-solid fa-cart-shopping text-red-600"></i>
+          </div>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+        <!-- Ubicacion de sucursales y monda -->
+        <section class="flex justify-between gap-1">
+          <!-- Tienda actual -->
+          <div
+            class="flex items-center gap-2 cursor-pointer active:opacity-70 transition-opacity w-fit"
+          >
+            <!-- icono -->
+            <div class="bg-red-100 p-1.5 rounded-full">
+              <i class="fa-solid fa-location-dot text-red-600 text-sm"></i>
+            </div>
+            <!-- infomacion -->
+            <div>
+              <p
+                class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+              >
+                Estás comprando en:
+              </p>
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-bold text-gray-800"
+                  >Central Madeirense - La lagunita</span
+                >
+                <i
+                  class="fa-solid fa-chevron-down text-[10px] text-red-600"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <!-- moneda -->
+          <div
+            class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
+          >
+            <p
+              class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+            >
+              Ver precios en:
+            </p>
+            <div
+              class="flex items-center gap-1 w-full bg-gray-100 rounded-full p-1"
+            >
+              <!-- icono -->
+              <div class="bg-green-200 p-1 rounded-full text-green-600">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <div class="flex items-center gap-1">
+                <i
+                  class="fa-solid fa-chevron-down text-[10px] text-green-600"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- barra de separacion -->
+        <div>
+          <hr class="border-t border-gray-100 w-40 mx-auto" />
+        </div>
+        <!-- datos del usurio -->
+        <section>
+          <div
+            class="bg-gray-100 p-2 rounded-md flex flex-col items-center gap-1"
+          >
+            <div class="w-25 h-25 overflow-hidden rounded-full">
+              <img
+                src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
+                alt="avatar user"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- nombre del usuario -->
+            <div>
+              <h2 class="text-3xl text-red-500 font-bold">Bryant Facenda</h2>
+              <p class="text-center text-gray-500">
+                V-<span class="font-bold">30021867</span>
+              </p>
+              <p class="text-gray-500 text-center">23/09/2003</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección de Historial de Compras -->
+
+        <section class="flex flex-col gap-4 p-4">
+          <!-- titulo -->
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold text-orange-400">Mis Compras</h2>
+            <span
+              class="text-xs font-bold text-gray-400 uppercase tracking-widest"
+              >Enero 2026</span
+            >
+          </div>
+
+          <!-- Tarjeta de Pedido 1 (En Camino) -->
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm relative overflow-hidden"
+          >
+            <!-- Indicador de estado -->
+            <div
+              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
+            >
+              Comprado
+            </div>
+
+            <div class="flex gap-4">
+              <!-- Icono de bolsa de mercado -->
+              <div
+                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-red-600 text-2xl"
+              >
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <!-- info de la compra -->
+              <div class="flex-1">
+                <p class="text-xs text-gray-400 font-bold">Pedido #CM-8829</p>
+                <h4 class="text-sm font-bold text-gray-800">
+                  Sede La Lagunita
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">
+                  12 productos • 13 Ene, 10:30 AM
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50"
+            >
+              <div>
+                <p class="text-[10px] text-gray-400 font-bold uppercase">
+                  Total pagado
+                </p>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-sm font-bold text-gray-500">Bs.</span>
+                  <span class="text-lg font-black text-gray-900">1.450,00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Pedido 2 (Entregado / Con Cashea) -->
+          <div
+            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm opacity-90"
+          >
+            <!-- Indicador de estado -->
+            <div
+              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase z-10"
+            >
+              Comprado
+            </div>
+
+            <div class="flex gap-4">
+              <div
+                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-gray-400 text-2xl"
+              >
+                <i class="fa-solid fa-cart-check"></i>
+              </div>
+
+              <div class="flex-1">
+                <p class="text-xs text-gray-400 font-bold">Pedido #CM-7712</p>
+                <h4 class="text-sm font-bold text-gray-800">
+                  Sede Los Cortijos
+                </h4>
+                <!-- Badge de Cashea integrado -->
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="flex -space-x-1">
+                    <div
+                      class="w-2 h-2 rounded-full bg-yellow-400 border border-white"
+                    ></div>
+                    <div
+                      class="w-2 h-2 rounded-full bg-black border border-white"
+                    ></div>
+                  </div>
+                  <span class="text-[9px] font-bold text-gray-500"
+                    >Pagado con Cashea</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50"
+            >
+              <div>
+                <span class="text-sm font-bold text-gray-400 italic"
+                  >Ref: $42.00</span
+                >
+              </div>
+              <div class="w-20">
+                <img src="../asset/svg/cashea-seeklogo.svg" alt="logo CASHEA" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

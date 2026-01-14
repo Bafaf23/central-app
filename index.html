@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- estilo para ocultar la barra del carrusel en vistas desktop -->
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+    <title>Central Madeirense</title>
+  </head>
+  <body>
+    <!-- wrapper -->
+    <div class="flex flex-col justify-between min-h-screen">
+      <!-- header -->
+      <header>
+        <div
+          class="flex justify-between items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow"
+        >
+          <!-- avatar user -->
+          <a href="page/perfil.html">
+            <div class="cursor-pointer w-13 h-13 rounded-full overflow-hidden">
+              <img
+                src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
+                alt="avatar user"
+                class="w-full h-full object-cover rounded-full border-2 border-transparent"
+              />
+            </div>
+          </a>
+
+          <!-- logo de la empresa -->
+          <div class="w-25 overflow-hidden">
+            <img
+              src="asset/svg/Logo_centralmadirense.svg"
+              alt="Central Madeirense"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <!-- carrito y notificaciones -->
+          <div class="flex gap-2 text-2xl">
+            <!-- campana -->
+            <i class="fa-solid fa-bell text-orange-400"></i>
+            <!-- carrito -->
+            <i class="fa-solid fa-cart-shopping text-red-600"></i>
+          </div>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+        <!-- Ubicacion de sucursales y monda -->
+        <section class="flex justify-between gap-1">
+          <!-- Tienda actual -->
+          <div
+            class="flex items-center gap-2 cursor-pointer active:opacity-70 transition-opacity w-fit"
+          >
+            <!-- icono -->
+            <div class="bg-red-100 p-1.5 rounded-full">
+              <i class="fa-solid fa-location-dot text-red-600 text-sm"></i>
+            </div>
+            <!-- infomacion -->
+            <div>
+              <p
+                class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+              >
+                Estás comprando en:
+              </p>
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-bold text-gray-800"
+                  >Central Madeirense - La lagunita</span
+                >
+                <i
+                  class="fa-solid fa-chevron-down text-[10px] text-red-600"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <!-- moneda -->
+          <div
+            class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
+          >
+            <p
+              class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+            >
+              Ver precios en:
+            </p>
+            <div
+              class="flex items-center gap-1 w-full bg-gray-100 rounded-full p-1"
+            >
+              <!-- icono -->
+              <div class="bg-green-200 p-1 rounded-full text-green-600">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <div class="flex items-center gap-1">
+                <i
+                  class="fa-solid fa-chevron-down text-[10px] text-green-600"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- barra de separacion -->
+        <div>
+          <hr class="border-t border-gray-100 w-40 mx-auto" />
+        </div>
+        <!-- promociones y saludo -->
+        <section class="flex flex-col gap-3">
+          <!-- titulo -->
+          <div>
+            <h2 class="text-2xl font-bold text-orange-500">¡Hola, Bryant!</h2>
+          </div>
+          <!-- contenedor de promociones -->
+          <div
+            class="p-2 bg-gray-100 rounded-md w-full flex gap-4 overflow-x-auto snap-x scrollbar-hide"
+          >
+            <!-- promocion 1 -->
+            <div class="relative min-w-full flex-shrink-0 h-60 snap-center">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 rounded-md"
+              ></div>
+              <div class="absolute z-20 bottom-6 left-6 right-6">
+                <span
+                  class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block"
+                  >OFERTA</span
+                >
+                <h3 class="text-white font-bold text-2xl">
+                  ¡Somos lo que te llevas a casa!
+                </h3>
+              </div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMetUUOVyC3l7Z6DmxjOsK0Vd8aOKDiq__9Q&s"
+                alt="promociones"
+                class="w-full h-full object-cover rounded-md"
+              />
+            </div>
+            <!-- promocion 2-->
+            <div class="relative min-w-full flex-shrink-0 h-60 snap-center">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 rounded-md"
+              ></div>
+              <div class="absolute z-20 bottom-6 left-6 right-6">
+                <span
+                  class="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block"
+                  >FRUBER</span
+                >
+                <h3 class="text-white font-bold text-2xl">
+                  ¡La mejor calidad en frutas y hortalizas!
+                </h3>
+              </div>
+              <img
+                src="https://api.kuentro.ai/uploads/users/1755026305-xl-689b93810e97a.png"
+                alt="promociones"
+                class="absolute w-full h-full object-cover rounded-md"
+              />
+            </div>
+            <!-- promocion 3-->
+            <div class="relative min-w-full flex-shrink-0 h-60 snap-center">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 rounded-md"
+              ></div>
+              <div class="absolute z-20 bottom-6 left-6 right-6">
+                <span
+                  class="bg-yellow-300 text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block"
+                  >CASHEA</span
+                >
+                <h3 class="text-white font-bold text-2xl">
+                  ¡Tu aliado para el mercado!
+                </h3>
+                <p class="text-white text-xs">
+                  Compra hoy y paga después con Cashea
+                </p>
+              </div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNdmm9xvzWRT81XKl57159TshP7acN-oTQyg&s"
+                alt="promociones"
+                class="absolute w-full h-full object-cover rounded-md"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- zona de ahorro -->
+        <section class="flex flex-col gap-2">
+          <!-- cabezera de la secction -->
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl font-bold text-red-600 flex items-center gap-2">
+              <i class="fa-solid fa-tags text-red-600"></i>
+              Pormociones de hoy
+            </h2>
+            <a href="#" class="text-red-600 font-semibold text-sm">Ver todo</a>
+          </div>
+          <!-- contenedor de productos en promocion -->
+          <div class="grid grid-cols-2 gap-4 bg-gray-100 rounded-md p-1">
+            <!-- producto 1 -->
+            <div
+              class="border border-gray-100 rounded-md shadow-sm bg-white p-2 flex flex-col gap-1 relative"
+            >
+              <!-- Badge de Descuento -->
+              <div
+                class="absolute top-3 left-3 bg-orange-400 text-white text-[10px] font-bold px-2 py-1 z-10 rounded-md"
+              >
+                MEGAPRECIO
+              </div>
+              <!-- img del producto -->
+              <div class="w-full h-full">
+                <img
+                  src="https://www.ceupe.com/images/easyblog_articles/3461/b2ap3_large_productos-en-carrito-de-compra.jpg"
+                  alt="producto"
+                  class="object-contain rounded-md"
+                />
+              </div>
+              <!-- Información -->
+              <div>
+                <p
+                  class="text-[10px] text-gray-400 uppercase font-bold tracking-wider"
+                >
+                  viveres
+                </p>
+                <h3
+                  class="text-sm font-semibold text-gray-700 line-clamp-2 leading-tight h-10"
+                >
+                  Harina de Maíz Precocida P.A.N. 1kg
+                </h3>
+                <!-- Precios -->
+                <div class="mt-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-black text-red-600">$1.10</span>
+                    <span class="text-xs text-gray-400 line-through"
+                      >$1.35</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Botón Añadir -->
+              <button
+                class="w-full mt-4 bg-red-600 active:scale-95 transition-transform text-white font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md shadow-red-200"
+              >
+                <i class="fa-solid fa-plus text-xs"></i>
+                Añadir
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- publicidad -->
+        <section>
+          <div class="relative w-full h-20">
+            <div
+              class="bg-gradient-to-t from-black/70 to-black/20 via-transparent absolute w-full h-full rounded-md"
+            ></div>
+            <h4 class="absolute text-xl text-white font-bold bottom-2 left-2">
+              publicidad
+            </h4>
+            <img
+              src="https://www.tendenciainternacional.com/wp-content/uploads/2025/06/BeFunky-collage01.jpg"
+              alt="publicidad"
+              class="w-full h-full object-cover rounded-md"
+            />
+          </div>
+        </section>
+      </main>
+      <!-- menu movil -->
+      <aside
+        class="bg-white p-4 border-t border-gray-200 rounded-t-xl shadow sticky bottom-0"
+      >
+        <nav class="flex justify-around items-center">
+          <a href="#" class="flex flex-col items-center text-red-600">
+            <i class="fa-solid fa-house"></i>
+            <span class="text-xs">Inicio</span>
+          </a>
+          <a href="#" class="flex flex-col items-center text-gray-500">
+            <i class="fa-solid fa-bread-slice"></i>
+            <span class="text-xs">Viveres</span>
+          </a>
+          <a href="#" class="flex flex-col items-center text-gray-500">
+            <i class="fa-solid fa-seedling"></i>
+            <span class="text-xs">Fruteria</span>
+          </a>
+          <a href="#" class="flex flex-col items-center text-gray-500">
+            <i class="fa-solid fa-cheese"></i>
+            <span class="text-xs">Charcuteria</span>
+          </a>
+          <a href="#" class="flex flex-col items-center text-gray-500">
+            <i class="fa-solid fa-drumstick-bite"></i>
+            <span class="text-xs">Carniseria</span>
+          </a>
+        </nav>
+      </aside>
+    </div>
+  </body>
+</html>
