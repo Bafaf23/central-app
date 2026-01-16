@@ -16,13 +16,13 @@
     <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
     <title>Central Madeirense | Perfil</title>
   </head>
-  <body>
+  <body class="dark:bg-slate-900">
     <!-- wrapper -->
     <div class="flex flex-col justify-between min-h-screen">
       <!-- header -->
       <header>
         <div
-          class="flex justify-between items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow"
+          class="flex justify-between items-center p-2 dark:bg-slate-950 dark:border-slate-800 bg-white border border-gray-50 rounded-b-2xl shadow"
         >
           <!-- boton de volver -->
           <div class="cursor-pointer overflow-hidden">
@@ -83,12 +83,12 @@
             <!-- infomacion -->
             <div>
               <p
-                class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+                class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
               >
                 Estás comprando en:
               </p>
               <div class="flex items-center gap-1">
-                <span class="text-sm font-bold text-gray-800"
+                <span class="text-sm font-bold text-gray-800 dark:text-slate-50"
                   >Central Madeirense - La Lagunita</span
                 >
                 <i
@@ -102,12 +102,12 @@
             class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
           >
             <p
-              class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+              class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
             >
               Ver precios en:
             </p>
             <div
-              class="flex items-center gap-3 w-full bg-gray-100 rounded-full p-1 cursor-pointer"
+              class="flex items-center gap-3 w-full dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer"
             >
               <!-- icono -->
               <div class="bg-green-200 p-1 rounded-full text-green-600">
@@ -123,12 +123,14 @@
         </section>
         <!-- barra de separacion -->
         <div>
-          <hr class="border-t border-gray-100 w-40 mx-auto" />
+          <hr
+            class="border-t border-gray-100 w-40 mx-auto dark:border-slate-700"
+          />
         </div>
         <!-- datos del usurio -->
         <section>
           <div
-            class="bg-gray-100 border border-gray-200 p-2 rounded-md flex flex-col items-center gap-1 relative"
+            class="bg-gray-100 dark:bg-slate-950 dark:border-slate-700 border border-gray-200 p-2 rounded-md flex flex-col items-center gap-1 relative"
           >
             <button
               class="absolute right-2 top-1 text-xl text-gray-500 cursor-pointer hover:text-gray-600"
@@ -147,7 +149,7 @@
             <div class="flex flex-col gap-1 items-center">
               <h2 class="text-3xl text-red-500 font-bold">Bryant Facenda</h2>
               <div class="flex gap-2 justify-center">
-                <p class="text-gray-600">
+                <p class="text-gray-600 dark:text-slate-50">
                   <i class="fa-regular fa-address-card text-orange-300"></i>
                   V-<span class="font-bold">30021768</span>
                 </p>
@@ -335,5 +337,6 @@
         </section>
       </main>
     </div>
+    <script src="../js/mode-dark.js"></script>
   </body>
 </html>

@@ -16,7 +16,7 @@
     <link rel="icon" href="asset/svg/Logo_centralmadirense.svg" />
     <title>Central Madeirense</title>
   </head>
-  <body>
+  <body class="dark:bg-slate-900">
     <!-- wrapper -->
     <div class="flex flex-col justify-between min-h-screen">
       <div>
@@ -24,7 +24,7 @@
         <header>
           <!-- header movil -->
           <div
-            class="flex justify-between items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow md:hidden lg:hidden"
+            class="flex justify-between items-center p-2 bg-white dark:border-slate-800 dark:bg-slate-950 border border-gray-50 rounded-b-2xl shadow md:hidden lg:hidden"
           >
             <!-- avatar user -->
             <a href="pages/perfil.html">
@@ -74,7 +74,7 @@
           </div>
           <!-- menu desktop -->
           <div
-            class="justify-around items-center p-2 bg-white border border-gray-50 rounded-b-2xl shadow md:flex lg:flex hidden gap-2"
+            class="justify-around items-center p-2 bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-b-2xl shadow md:flex lg:flex hidden gap-2"
           >
             <!-- logo de la empresa -->
             <div class="w-25 overflow-hidden">
@@ -91,12 +91,12 @@
                 class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
               >
                 <p
-                  class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+                  class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none"
                 >
                   Ver precios en:
                 </p>
                 <div
-                  class="flex items-center gap-3 w-full bg-gray-100 rounded-full p-1 cursor-pointer"
+                  class="flex items-center gap-3 w-full dark:bg-slate-700 bg-gray-100 rounded-full p-1 cursor-pointer"
                 >
                   <!-- icono -->
                   <div class="bg-green-200 p-1 rounded-full text-green-600">
@@ -115,12 +115,12 @@
             <div class="flex items-center w-full max-w-4xl mx-auto">
               <!-- Contenedor principal de la barra -->
               <div
-                class="flex w-full bg-white border-2 border-gray-100 rounded-full focus-within:border-red-500 transition-all overflow-hidden"
+                class="flex w-full bg-white border-2 dark:border-slate-800 border-gray-100 rounded-full focus-within:border-red-500 transition-all overflow-hidden"
               >
                 <!-- 1. Selector de Categorías (Izquierda) -->
                 <div class="relative hidden md:block">
                   <select
-                    class="h-full pl-4 pr-8 bg-gray-50 text-gray-600 text-sm font-bold border-r border-gray-100 outline-none appearance-none cursor-pointer hover:bg-gray-100 transition-colors"
+                    class="h-full pl-4 pr-8 bg-gray-50 text-gray-600 text-sm font-bold border-r border-gray-100 outline-none appearance-none cursor-pointer hover:bg-gray-100 transition-colors dark:bg-slate-900 dark:border-slate-800 dark:hover:bg-slate-800"
                   >
                     <option>Todas</option>
                     <option>Víveres</option>
@@ -139,7 +139,7 @@
                 <input
                   type="text"
                   placeholder="Busca productos, marcas y más..."
-                  class="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-400"
+                  class="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-400 dark:bg-slate-900 dark:border-slate-800"
                 />
 
                 <!-- 3. Botón de Búsqueda (Derecha) -->
@@ -196,12 +196,13 @@
                   <!-- infomacion -->
                   <div>
                     <p
-                      class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+                      class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none"
                     >
                       Estás comprando en:
                     </p>
                     <div class="flex items-center gap-1">
-                      <span class="text-sm font-bold text-gray-800"
+                      <span
+                        class="text-sm font-bold dark:text-slate-50 text-gray-800"
                         >Central Madeirense - La Lagunita</span
                       >
                       <i
@@ -212,61 +213,61 @@
                 </div>
                 <!-- opciones -->
                 <div
-                  class="absolute left-0 mt-2 w-fit bg-white border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
+                  class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
                   id="dropdownMenu"
                 >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - La Lameda</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - La Boyera</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - La Concordia</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - San Antonio de los altos</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - Plaza las Americas</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - Los Ruises</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - Vista Hermosa</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
                   >
                     <i class="fa-solid fa-shop"></i>
                     Central Madeirense - Catia</a
@@ -299,25 +300,25 @@
           <div class="hidden md:flex lg:flex">
             <nav class="w-full p-0.5">
               <ul class="flex gap-5 justify-evenly items-center">
-                <li class="text-gray-400 cursor-pointer">
+                <li class="dark:text-slate-50 text-gray-400 cursor-pointer">
                   Viveres
                   <i
                     class="fa-solid fa-chevron-down text-[10px] text-orange-300"
                   ></i>
                 </li>
-                <li class="text-gray-400 cursor-pointer">
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
                   Carniceria
                   <i
                     class="fa-solid fa-chevron-down text-[10px] text-orange-300"
                   ></i>
                 </li>
-                <li class="text-gray-400 cursor-pointer">
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
                   Charcuteria
                   <i
                     class="fa-solid fa-chevron-down text-[10px] text-orange-300"
                   ></i>
                 </li>
-                <li class="text-gray-400 cursor-pointer">
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
                   Fruteria
                   <i
                     class="fa-solid fa-chevron-down text-[10px] text-orange-300"
@@ -342,12 +343,13 @@
               <!-- infomacion -->
               <div>
                 <p
-                  class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+                  class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
                 >
                   Estás comprando en:
                 </p>
                 <div class="flex items-center gap-1">
-                  <span class="text-sm font-bold text-gray-800"
+                  <span
+                    class="text-sm font-bold text-gray-800 dark:text-slate-50"
                     >Central Madeirense - La Lagunita</span
                   >
                   <i
@@ -361,15 +363,17 @@
               class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
             >
               <p
-                class="text-[10px] text-gray-500 font-bold uppercase leading-none"
+                class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
               >
                 Ver precios en:
               </p>
               <div
-                class="flex items-center gap-3 w-full bg-gray-100 rounded-full p-1 cursor-pointer"
+                class="flex items-center gap-3 w-full dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer"
               >
                 <!-- icono -->
-                <div class="bg-green-200 p-1 rounded-full text-green-600">
+                <div
+                  class="bg-green-200 dark:bg-green-300 p-1 rounded-full text-green-600"
+                >
                   <i class="fa-solid fa-dollar-sign"></i>
                 </div>
                 <div class="flex items-center gap-1">
@@ -382,11 +386,13 @@
           </section>
           <!-- barra de separacion -->
           <div>
-            <hr class="border-t border-gray-100 w-40 mx-auto" />
+            <hr
+              class="border-t border-gray-100 w-40 mx-auto dark:border-slate-700"
+            />
           </div>
           <!-- Contenedor principal: Optimizado para Desktop 2026 -->
           <section
-            class="p-2 bg-gray-100 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 h-[300px] md:h-[450px]"
+            class="p-2 dark:bg-slate-950 bg-gray-100 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 h-[300px] md:h-[450px]"
           >
             <!-- Panel 1: Carrusel (Principal) -->
             <div
@@ -515,10 +521,12 @@
               >
             </div>
             <!-- contenedor de productos en promocion -->
-            <div class="grid grid-cols-2 gap-4 bg-gray-100 rounded-md p-1">
+            <div
+              class="grid grid-cols-2 gap-4 dark:bg-slate-950 bg-gray-100 rounded-md p-1"
+            >
               <!-- producto 1 -->
               <div
-                class="border border-gray-100 rounded-md shadow-sm bg-white p-2 flex flex-col gap-0 relative w-50 md:w-80 lg:80 h-fit"
+                class="border dark:border-slate-800 border-gray-100 rounded-md shadow-sm dark:bg-slate-900 bg-white p-2 flex flex-col gap-0 relative w-50 md:w-80 lg:80 h-fit"
               >
                 <!-- Badge de Descuento -->
                 <div
@@ -537,12 +545,12 @@
                 <!-- Información -->
                 <div>
                   <p
-                    class="text-[10px] text-gray-400 uppercase font-bold tracking-wider"
+                    class="text-[10px] dark:text-slate-400 text-gray-400 uppercase font-bold tracking-wider"
                   >
                     viveres
                   </p>
                   <h3
-                    class="text-sm font-semibold text-gray-700 line-clamp-2 leading-tight h-10"
+                    class="text-sm font-semibold dark:text-slate-50 text-gray-700 line-clamp-2 leading-tight h-10"
                   >
                     Harina de Maíz Precocida P.A.N. 1kg
                   </h3>
@@ -550,7 +558,8 @@
                   <div class="mt-2">
                     <div class="flex items-center gap-2">
                       <span class="text-lg font-black text-red-600">$1.10</span>
-                      <span class="text-xs text-gray-400 line-through"
+                      <span
+                        class="text-xs dark:text-slate-400 text-gray-400 line-through"
                         >$1.35</span
                       >
                     </div>
@@ -558,7 +567,7 @@
                 </div>
                 <!-- Botón Añadir -->
                 <button
-                  class="w-full mt-4 bg-red-600 active:scale-95 transition-transform text-white font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md shadow-red-200"
+                  class="w-full mt-4 bg-red-600 active:scale-95 transition-transform text-white font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md dark:shadow-none shadow-red-200"
                 >
                   <i class="fa-solid fa-plus text-xs"></i>
                   Añadir
@@ -641,6 +650,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="js/factura.js"></script>
+    <script src="js/mode-dark.js"></script>
     <script src="js/ui-interaciones.js"></script>
     <script src="js/carrusel.js"></script>
   </body>
