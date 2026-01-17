@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- tailwindcss -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- fontawesone -->
     <script
       src="https://kit.fontawesome.com/a74559d35e.js"
       crossorigin="anonymous"
     ></script>
     <!-- link css externo -->
-    <link rel="stylesheet" href="../asset/css/style.css" />
+    <link rel="stylesheet" href="../dist/output.css" />
     <!-- icono -->
     <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Central Madeirense | Perfil</title>
   </head>
   <body class="dark:bg-slate-900">
@@ -153,12 +163,12 @@
                   <i class="fa-regular fa-address-card text-orange-300"></i>
                   V-<span class="font-bold">30021768</span>
                 </p>
-                <span class="text-gray-600">
+                <span class="text-gray-600 dark:text-slate-50">
                   <i class="fa-regular fa-calendar-days text-orange-300"></i>
                   23/09/2023
                 </span>
               </div>
-              <span class="text-gray-600">
+              <span class="text-gray-600 dark:text-slate-50">
                 <i class="fa-regular fa-envelope text-orange-300"></i>
                 bryantffacen@gmail.com
               </span>
@@ -169,20 +179,22 @@
         <section class="flex flex-col gap-4 p-4">
           <!-- titulo -->
           <div class="flex items-center justify-between">
-            <h2 class="text-xl font-bold text-orange-400">Mis Compras</h2>
+            <h2 class="text-xs font-bold text-orange-400 uppercase">
+              Mis Compras
+            </h2>
             <span
-              class="text-xs font-bold text-gray-400 uppercase tracking-widest"
+              class="text-xs font-bold text-gray-400 dark:text-slate-50 uppercase tracking-widest"
               >Enero 2026</span
             >
           </div>
 
           <!-- Tarjeta de Pedido 1 -->
           <div
-            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm relative overflow-hidden"
+            class="bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden"
           >
             <!-- Indicador de estado -->
             <div
-              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
+              class="absolute top-0 right-0 dark:bg-green-300 bg-green-100 text-green-600 dark:text-green-900 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
             >
               Pago Exitoso
             </div>
@@ -190,100 +202,118 @@
             <div class="flex gap-4">
               <!-- Icono de bolsa de mercado -->
               <div
-                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-red-600 text-2xl"
+                class="bg-gray-50 dark:bg-slate-600 h-16 w-16 rounded-xl flex items-center justify-center text-red-600 text-2xl"
               >
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
               <!-- info de la compra -->
               <div class="flex-1">
-                <p class="text-xs text-gray-400 font-bold">Orden #CM44-8829</p>
-                <h4 class="text-sm font-bold text-gray-800">
+                <p class="text-xs text-gray-400 dark:text-slate-200 font-bold">
+                  Orden #CM44-8829
+                </p>
+                <h4 class="text-sm font-bold text-gray-800 dark:text-slate-50">
                   Sede La Lagunita
                 </h4>
-                <p class="text-xs text-gray-500 mt-1">
+                <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">
                   12 productos • 13 Ene, 10:30 AM
                 </p>
               </div>
             </div>
             <!-- total pagado -->
             <div
-              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50"
+              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50 dark:border-slate-600"
             >
               <div>
-                <p class="text-[10px] text-gray-400 font-bold uppercase">
+                <p
+                  class="text-[10px] text-gray-400 dark:text-slate-50 font-bold uppercase"
+                >
                   Total pagado
                 </p>
                 <!-- monto -->
                 <div class="flex items-baseline gap-1">
-                  <span class="text-sm font-bold text-gray-500">Bs.</span>
-                  <span class="text-lg font-black text-gray-900">1.450,00</span>
+                  <span
+                    class="text-sm font-bold text-gray-500 dark:text-slate-300"
+                    >Bs.</span
+                  >
+                  <span
+                    class="text-lg font-black text-gray-900 dark:text-slate-200"
+                    >1.450,00</span
+                  >
                 </div>
               </div>
               <button
-                class="bg-white p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
+                class="bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
               >
                 Ver detalles
               </button>
             </div>
           </div>
-
-          <!-- Tarjeta de Pedido 2 (Entregado / Con Cashea) -->
+          <!-- Tarjeta de Pedido 2 -->
           <div
-            class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm opacity-90 relative overflow-hidden"
+            class="bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden"
           >
             <!-- Indicador de estado -->
             <div
-              class="absolute top-0 right-0 bg-green-100 text-green-600 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
+              class="absolute top-0 right-0 dark:bg-green-300 bg-green-100 text-green-600 dark:text-green-900 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase"
             >
               Pago Exitoso
             </div>
 
             <div class="flex gap-4">
+              <!-- Icono de bolsa de mercado -->
               <div
-                class="bg-gray-50 h-16 w-16 rounded-xl flex items-center justify-center text-2xl text-red-600"
+                class="bg-gray-50 dark:bg-slate-600 h-16 w-16 rounded-xl flex items-center justify-center text-red-600 text-2xl"
               >
                 <i class="fa-solid fa-bag-shopping"></i>
               </div>
-
+              <!-- info de la compra -->
               <div class="flex-1">
-                <p class="text-xs text-gray-400 font-bold">Pedido #CM09-7712</p>
-                <h4 class="text-sm font-bold text-gray-800">
-                  Sede Los Cortijos
+                <p class="text-xs text-gray-400 dark:text-slate-200 font-bold">
+                  Orden #CM44-8829
+                </p>
+                <h4 class="text-sm font-bold text-gray-800 dark:text-slate-50">
+                  Sede La Lagunita
                 </h4>
-                <!-- Badge de Cashea integrado -->
-                <div class="flex items-center gap-1 mt-1">
-                  <div class="flex -space-x-1">
-                    <div
-                      class="w-2 h-2 rounded-full bg-yellow-400 border border-white"
-                    ></div>
-                    <div
-                      class="w-2 h-2 rounded-full bg-black border border-white"
-                    ></div>
-                  </div>
-                  <span class="text-[9px] font-bold text-gray-500"
-                    >Pagado con Cashea</span
+                <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                  12 productos • 13 Ene, 10:30 AM
+                </p>
+              </div>
+            </div>
+            <!-- total pagado -->
+            <div
+              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50 dark:border-slate-600"
+            >
+              <div>
+                <p
+                  class="text-[10px] text-gray-400 dark:text-slate-50 font-bold uppercase"
+                >
+                  Total pagado
+                </p>
+                <!-- monto -->
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="text-sm font-bold text-gray-500 dark:text-slate-300"
+                    >Bs.</span
+                  >
+                  <span
+                    class="text-lg font-black text-gray-900 dark:text-slate-200"
+                    >1.450,00</span
                   >
                 </div>
               </div>
-            </div>
-
-            <div
-              class="flex justify-between items-center mt-4 pt-3 border-t border-gray-50"
-            >
-              <div>
-                <span class="text-sm font-bold text-gray-400 italic"
-                  >Ref: $42.00</span
-                >
-              </div>
-              <div class="w-20">
-                <img src="../asset/svg/cashea-seeklogo.svg" alt="logo CASHEA" />
-              </div>
+              <button
+                class="bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
+              >
+                Ver detalles
+              </button>
             </div>
           </div>
         </section>
         <!-- barra de separacion -->
         <div>
-          <hr class="border-t border-gray-100 w-40 mx-auto" />
+          <hr
+            class="border-t border-gray-100 dark:border-slate-600 w-40 mx-auto"
+          />
         </div>
         <!-- Configuración e Información -->
         <section class="flex flex-col gap-2 p-4">
@@ -292,44 +322,74 @@
           </h3>
 
           <div
-            class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+            class="bg-white dark:bg-slate-950 rounded-2xl border border-gray-100 dark:border-slate-800 overflow-hidden shadow-sm"
           >
             <!-- Botón Acerca de la App (Opción 1 elegida) -->
             <a
               href="../pages/acerca-de-la-app.html"
-              class="flex items-center justify-between p-4 active:bg-gray-50 border-b border-gray-50"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 border-b border-gray-50 dark:border-slate-800"
             >
               <div class="flex items-center gap-3">
-                <div class="bg-blue-50 p-2 rounded-lg text-blue-600">
+                <div
+                  class="bg-blue-50 dark:bg-slate-300 p-2 rounded-lg text-blue-600"
+                >
                   <i class="fa-solid fa-circle-info"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700"
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
                   >Acerca de la aplicación</span
                 >
               </div>
-              <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
             </a>
 
             <!-- Soporte -->
             <a
               href="www.centralmadeirense.com.ve"
               target="_blank"
-              class="flex items-center justify-between p-4 active:bg-gray-50"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 border-gray-50 border-b dark:border-slate-800"
             >
               <div class="flex items-center gap-3">
-                <div class="bg-green-50 p-2 rounded-lg text-green-600">
+                <div
+                  class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-green-600"
+                >
                   <i class="fa-solid fa-headset"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700"
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
                   >Atención al Cliente</span
                 >
               </div>
-              <i class="fa-solid fa-chevron-right text-xs text-gray-300"></i>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
+            </a>
+            <!-- Configuracion -->
+            <a
+              href="configuracion.html"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-orange-600"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                </div>
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                  >Configuracion</span
+                >
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
             </a>
           </div>
           <!-- Botón Cerrar Sesión -->
           <button
-            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 rounded-2xl active:scale-95 transition-transform"
+            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 dark:bg-red-300 rounded-2xl active:scale-95 transition-transform"
           >
             <i class="fa-solid fa-right-from-bracket"></i>
             Cerrar Sesión

@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- tailwindcss -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- fontawesone -->
     <script
       src="https://kit.fontawesome.com/a74559d35e.js"
       crossorigin="anonymous"
     ></script>
     <!-- link de ccs externo -->
-    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="dist/output.css" />
     <!-- icono -->
     <link rel="icon" href="asset/svg/Logo_centralmadirense.svg" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Central Madeirense</title>
   </head>
   <body class="dark:bg-slate-900">

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- link css externo -->
+    <link href="../dist/output.css" rel="stylesheet" />
+    <!-- icono -->
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <title>Central Madeirense | Perfil</title>
+  </head>
+  <body class="dark:bg-slate-900">
+    <!-- wrapper -->
+    <div class="flex flex-col justify-between min-h-screen">
+      <!-- header -->
+      <header>
+        <div
+          class="flex justify-between items-center p-2 dark:bg-slate-950 dark:border-slate-800 bg-white border border-gray-50 rounded-b-2xl shadow"
+        >
+          <!-- boton de volver -->
+          <div class="cursor-pointer overflow-hidden">
+            <a href="perfil.html" class="flex items-center gap-1 text-red-500">
+              <i class="fa-solid fa-chevron-left text-base"></i>
+              <p class="leading-none pb-0.5">volver</p>
+            </a>
+          </div>
+          <!-- logo de la empresa -->
+          <div class="w-25 overflow-hidden">
+            <img
+              src="../asset/svg/Logo_centralmadirense.svg"
+              alt="Central Madeirense"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <!-- carrito y notificaciones -->
+          <div class="flex gap-2 text-2xl">
+            <!-- campana -->
+            <a href="">
+              <div class="relative">
+                <i class="fa-solid fa-bell text-orange-400"></i>
+                <span
+                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center"
+                  >+9</span
+                >
+              </div>
+            </a>
+            <!-- carrito -->
+            <a href="">
+              <div class="relative">
+                <i class="fa-solid fa-cart-shopping text-red-600"></i>
+                <span
+                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center"
+                  >12</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+        <!-- Configuración e Información -->
+        <section class="flex flex-col gap-2 p-4">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-red-600">
+            Ajustes y Soporte
+          </h3>
+
+          <div
+            class="bg-white dark:bg-slate-950 rounded-2xl border border-gray-100 dark:border-slate-800 overflow-hidden shadow-sm"
+          >
+            <!-- Botón Acerca de la App (Opción 1 elegida) -->
+            <a
+              href="../pages/acerca-de-la-app.html"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 border-b border-gray-50 dark:border-slate-800"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-blue-50 dark:bg-slate-300 p-2 rounded-lg text-blue-600"
+                >
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                  >Acerca de la aplicación</span
+                >
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
+            </a>
+            <!-- Soporte -->
+            <a
+              href="www.centralmadeirense.com.ve"
+              target="_blank"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 border-gray-50 border-b dark:border-slate-800"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-green-600"
+                >
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                  >Atención al Cliente</span
+                >
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
+            </a>
+            <!-- modo dark -->
+            <label
+              class="flex items-center justify-between p-4 cursor-pointer border-b border-gray-50 dark:border-slate-800"
+              for="mode"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-purple-600"
+                >
+                  <!-- Estos iconos cambian SOLOS gracias a Tailwind -->
+                  <span class="hidden" id="theme-toggle-dark-icon">
+                    <i class="fa-solid fa-moon"></i>
+                  </span>
+                  <span class="hidden" id="theme-toggle-light-icon">
+                    <i class="fa-solid fa-sun"></i>
+                  </span>
+                </div>
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                  id="modeText"
+                  >Modo</span
+                >
+              </div>
+
+              <div class="relative inline-flex items-center">
+                <!-- El ID clave es 'mode' -->
+                <input type="checkbox" id="mode" class="sr-only peer" />
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:bg-blue-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"
+                ></div>
+              </div>
+            </label>
+            <!-- Configuracion -->
+            <a
+              href="configuracion.html"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-orange-600"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                </div>
+                <span
+                  class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                  >Configuracion</span
+                >
+              </div>
+              <i
+                class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+              ></i>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/mode-dark.js"></script>
+  </body>
+</html>
