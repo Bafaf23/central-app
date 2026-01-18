@@ -242,7 +242,7 @@
                 </div>
               </div>
               <button
-                class="bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
+                class="dark:bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
               >
                 Ver detalles
               </button>
@@ -302,7 +302,7 @@
                 </div>
               </div>
               <button
-                class="bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
+                class="dark:bg-red-300 p-1 text-red-600 border border-red-600 rounded-md active:bg-red-600 active:text-white transition"
               >
                 Ver detalles
               </button>
@@ -315,6 +315,59 @@
             class="border-t border-gray-100 dark:border-slate-600 w-40 mx-auto"
           />
         </div>
+          <!-- Metodos de pago -->
+          <section class="flex flex-col gap-2 p-4">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-green-600">
+              Metodos de pago
+            </h3>
+  
+            <div
+              class="bg-white dark:bg-slate-950 rounded-2xl border border-gray-100 dark:border-slate-800 overflow-hidden shadow-sm"
+            >
+              <!-- Tarjetas -->
+              <a
+                href="tarjetas.html"
+                class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 border-b border-gray-50 dark:border-slate-800"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="bg-blue-50 dark:bg-slate-300 p-2 rounded-lg text-blue-600"
+                  >
+                  <i class="fa-regular fa-credit-card"></i>
+                  </div>
+                  <span
+                    class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                    >Tarjeta Dibit o Credit</span
+                  >
+                </div>
+                <i
+                  class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+                ></i>
+              </a>
+  
+              <!-- Pago P2C -->
+              <a
+                href="www.centralmadeirense.com.ve"
+                target="_blank"
+                class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-700 "
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="bg-green-50 dark:bg-slate-300 p-2 rounded-lg text-green-600"
+                  >
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  </div>
+                  <span
+                    class="text-sm font-semibold text-gray-700 dark:text-slate-50"
+                    >Pago Movil</span
+                  >
+                </div>
+                <i
+                  class="fa-solid fa-chevron-right text-xs text-gray-300 dark:text-slate-400"
+                ></i>
+              </a>
+            </div>
+          </section>
         <!-- Configuración e Información -->
         <section class="flex flex-col gap-2 p-4">
           <h3 class="text-xs font-bold uppercase tracking-widest text-red-600">
@@ -389,7 +442,7 @@
           </div>
           <!-- Botón Cerrar Sesión -->
           <button
-            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 dark:bg-red-300 rounded-2xl active:scale-95 transition-transform"
+            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-200 dark:bg-red-300 rounded-2xl active:scale-95 transition-transform"
           >
             <i class="fa-solid fa-right-from-bracket"></i>
             Cerrar Sesión
