@@ -87,7 +87,7 @@
             class="justify-around items-center p-2 bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-b-2xl shadow md:flex lg:flex hidden gap-2"
           >
             <!-- logo de la empresa -->
-            <div class="w-25 overflow-hidden">
+            <div class="w-24 overflow-hidden shrink-0">
               <img
                 src="asset/svg/Logo_centralmadirense.svg"
                 alt="Central Madeirense"
@@ -122,7 +122,7 @@
             </div>
 
             <!-- barra de busqueda -->
-            <div class="flex items-center w-full max-w-4xl mx-auto">
+            <div class="flex items-center w-1/2">
               <!-- Contenedor principal de la barra -->
               <div
                 class="flex w-full bg-white border-2 dark:border-slate-800 border-gray-100 rounded-full focus-within:border-red-500 transition-all overflow-hidden"
@@ -144,14 +144,12 @@
                     class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 pointer-events-none"
                   ></i>
                 </div>
-
                 <!-- 2. Input de Texto -->
                 <input
                   type="text"
                   placeholder="Busca productos, marcas y más..."
                   class="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-400 dark:bg-slate-900 dark:border-slate-800"
                 />
-
                 <!-- 3. Botón de Búsqueda (Derecha) -->
                 <button
                   class="bg-red-600 hover:bg-red-700 text-white p-2 flex items-center justify-center transition-colors group"
@@ -165,7 +163,6 @@
                 </button>
               </div>
             </div>
-
             <!-- carrito notificaciones perfil y ubucacion de tienda -->
             <div class="flex gap-5 text-2xl justify-center items-center">
               <!-- avatar user -->
@@ -182,7 +179,7 @@
                   </div>
 
                   <div>
-                    <span class="text-[12px] text-orange-400 font-bold"
+                    <span class="text-[10px] text-orange-400 font-bold"
                       >Hola, Bryant</span
                     >
                   </div>
@@ -340,7 +337,7 @@
         </header>
         <!-- Main -->
         <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
-          <!-- Ubicacion de sucursales y monda -->
+          <!-- Ubicacion de sucursales y monda (movil) -->
           <section class="flex justify-between gap-1 md:hidden lg:hidden">
             <!-- Tienda actual -->
             <div
@@ -461,7 +458,6 @@
                   />
                 </div>
               </div>
-
               <!-- Indicadores: Visibles solo en móvil (md:hidden) -->
               <div
                 class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:hidden"
@@ -475,7 +471,6 @@
                 ></div>
               </div>
             </div>
-
             <!-- Panel 2 y 3 (Solo Desktop: md:flex) -->
             <div class="hidden md:flex flex-col gap-4 h-full">
               <!-- Box 2: Oferta destacada -->
