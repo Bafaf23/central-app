@@ -37,7 +37,7 @@
             class="flex justify-between items-center p-2 bg-white dark:border-slate-800 dark:bg-slate-950 border border-gray-50 rounded-b-2xl shadow md:hidden lg:hidden"
           >
             <!-- avatar user -->
-            <a href="pages/perfil.html">
+            <a href="src/pages/perfil.html">
               <div
                 class="cursor-pointer w-13 h-13 rounded-full overflow-hidden"
               >
@@ -60,7 +60,7 @@
             <!-- carrito y notificaciones -->
             <div class="flex gap-2 text-2xl">
               <!-- campana -->
-              <a href="pages/notificaciones.html">
+              <a href="src/pages/notificaciones.html">
                 <div class="relative">
                   <i class="fa-solid fa-bell text-orange-400"></i>
                   <span
@@ -96,7 +96,7 @@
             </div>
 
             <!-- moneda -->
-            <div>
+            <div class="inline-block relative group">
               <div
                 class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
               >
@@ -106,18 +106,27 @@
                   Ver precios en:
                 </p>
                 <div
-                  class="flex items-center gap-3 w-full dark:bg-slate-700 bg-gray-100 rounded-full p-1 cursor-pointer"
+                  class="flex items-center gap-3 w-fit dark:bg-slate-700 bg-gray-100 rounded-full p-1 cursor-pointer"
                 >
                   <!-- icono -->
                   <div class="bg-green-200 p-1 rounded-full text-green-600">
                     <i class="fa-solid fa-dollar-sign"></i>
                   </div>
-                  <div class="flex items-center gap-1">
-                    <i
-                      class="fa-solid fa-chevron-down text-[10px] text-green-600"
-                    ></i>
-                  </div>
                 </div>
+              </div>
+              <!-- opciones -->
+              <div
+              class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
+              id="dropdownMenu"
+            >
+              <a
+                href="#"
+                class="inline-flex items-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+              >
+                <span class="bg-orange-400 p-1 rounded-full">Bs</span>
+                Bolivares</a
+              >
+              
               </div>
             </div>
 
@@ -366,7 +375,8 @@
               </div>
             </div>
             <!-- moneda -->
-            <div
+             <div lass="inline-block relative group">
+              <div
               class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
             >
               <p
@@ -375,20 +385,32 @@
                 Ver precios en:
               </p>
               <div
-                class="flex items-center gap-3 w-full dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer"
+                class="flex items-center gap-3 w-fit dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer"
               >
                 <!-- icono -->
-                <div
+                 <div
                   class="bg-green-200 dark:bg-green-300 p-1 rounded-full text-green-600"
                 >
-                  <i class="fa-solid fa-dollar-sign"></i>
-                </div>
-                <div class="flex items-center gap-1">
-                  <i
-                    class="fa-solid fa-chevron-down text-[10px] text-green-600"
-                  ></i>
-                </div>
+                      <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                  </div>
               </div>
+              <!-- opciones -->
+               <!-- opciones -->
+              <div
+              class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
+              id="dropdownMenu"
+            >
+              <a
+                href="#"
+                class="inline-flex items-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+              >
+                <span class="bg-orange-400 p-1 rounded-full">Bs</span>
+                Bolivares</a
+              >
+              
+              </div>
+              </div> 
             </div>
           </section>
           <!-- barra de separacion -->

@@ -12,9 +12,21 @@
     ></script>
     <!-- link css externo -->
     <link rel="stylesheet" href="../../dist/css/output.css" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>Acerca de | Central-app</title>
   </head>
-  <body>
+  <body class="dark:bg-slate-900 bg-gray-100">
     <!-- wrapper -->
     <div class="flex flex-col justify-between min-h-screen">
      <!-- Header-->
@@ -30,9 +42,9 @@
         <!-- datos de la empresa -->
         <section>
           <div
-            class="bg-white border shadow border-gray-100 p-2 rounded-md flex flex-col items-center gap-1"
+            class="bg-white dark:bg-slate-950 dark:border-slate-800 border shadow border-gray-100 p-2 rounded-md flex flex-col items-center gap-1"
           >
-            <!-- logo  -->
+            <!-- logo de la app -->
             <div class="w-35 h-fit overflow-hidden rounded-full">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnANtNRk0tdhnkfd0kYaT7rXkDO65LEqb8xQ&s"
@@ -40,26 +52,26 @@
                 class="w-full h-full object-cover"
               />
             </div>
-            <!-- nombre  -->
+            <!-- datos de la empresa  -->
             <div class="flex flex-col gap-1 items-center">
               <h2 class="text-2xl text-red-500 font-bold">
                 Central Madeirense, C.A
               </h2>
               <div
-                class="flex flex-col gap-2 items-center bg-gray-100 p-1 rounded-md"
+                class="flex flex-col gap-2 items-center bg-gray-100 dark:bg-slate-800 p-1 rounded-md"
               >
-                <p class="text-gray-600">
-                  <i class="fa-regular fa-address-card text-orange-300"></i>
+                <p class="text-gray-600 dark:text-slate-100">
+                  <i class="fa-regular fa-address-card text-orange-400"></i>
                   J-<span class="font-bold">00006275-7</span>
                 </p>
-                <p class="text-gray-600 text-sm text-center">
-                  <i class="fa-solid fa-location-dot text-orange-300"></i>
+                <p class="text-gray-600 text-sm text-center dark:text-slate-300">
+                  <i class="fa-solid fa-location-dot text-orange-400"></i>
                   CENTRO CM, CARRETERA PETARE- STA. LUCÍA KM 5, FILAS DE
                   MARICHE. CARACAS, VENEZUELA
                 </p>
               </div>
-              <span class="text-gray-600">
-                <i class="fa-solid fa-circle-info text-orange-300"></i>
+              <span class="text-gray-600 dark:text-slate-300">
+                <i class="fa-solid fa-circle-info text-orange-400"></i>
                 V1.2.0 (2026)
               </span>
             </div>
@@ -76,32 +88,32 @@
           <div class="grid grid-cols-2 gap-2">
             <!-- card -->
             <div
-              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
+              class="bg-white dark:bg-slate-950 dark:border-slate-800 rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
             >
-              <span class="text-2xl text-orange-400">
+              <span class="text-2xl text-orange-500">
                 <i class="fa-solid fa-circle-arrow-down"></i>
               </span>
-              <h2 class="text-gray-400">Ultima actualizacion</h2>
-              <span class="text-red-600 font-bold">23/12/2025</span>
+              <h2 class="text-gray-400 dark:text-slate-50">Ultima actualizacion</h2>
+              <span class="text-red-500 font-bold">23/12/2025</span>
             </div>
             <!-- card -->
             <div
-              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
+              class="bg-white dark:bg-slate-950 dark:border-slate-800 rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center"
             >
-              <span class="text-2xl text-orange-400">
+              <span class="text-2xl text-orange-500">
                 <i class="fa-solid fa-building-circle-check"></i>
               </span>
-              <h2 class="text-gray-400">ID de Compilación</h2>
-              <span class="text-red-600 font-bold">1024</span>
+              <h2 class="text-gray-400 dark:text-slate-50">ID de Compilación</h2>
+              <span class="text-red-500 font-bold">1024</span>
             </div>
             <!-- card desarrollado -->
             <div
-              class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center col-span-2"
+              class="bg-white dark:bg-slate-950 dark:border-slate-800 rounded-2xl border border-gray-100 overflow-hidden shadow-sm p-1 flex flex-col gap-1 items-center col-span-2"
             >
-              <span class="text-2xl text-orange-400">
+              <span class="text-2xl text-orange-500">
                 <i class="fa-solid fa-code"></i>
               </span>
-              <h2 class="text-gray-400">Desarrollado por:</h2>
+              <h2 class="text-gray-400 dark:text-slate-50">Desarrollado por:</h2>
               <span class="text-green-600 font-bold">Bryant Facenda</span>
             </div>
           </div>
@@ -113,18 +125,18 @@
           </h3>
 
           <div
-            class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+            class="bg-white dark:bg-slate-950 dark:border-slate-800 rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
           >
             <!-- terminos y condiciones -->
             <a
               href="#"
-              class="flex items-center justify-between p-4 active:bg-gray-50 border-b border-gray-50"
+              class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-slate-800"
             >
               <div class="flex items-center gap-3">
                 <div class="bg-blue-50 p-2 rounded-lg text-blue-600">
                   <i class="fa-solid fa-circle-info"></i>
                 </div>
-                <span class="text-sm font-semibold text-gray-700"
+                <span class="text-sm font-semibold text-gray-700 dark:text-slate-50"
                   >Ternimos y condisiones</span
                 >
               </div>
@@ -133,7 +145,7 @@
           </div>
           <!-- Botón Cerrar Sesión -->
           <button
-            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-50 rounded-2xl active:scale-95 transition-transform"
+            class="w-full mt-2 p-4 text-red-500 font-bold text-sm flex items-center justify-center gap-2 bg-red-100 rounded-2xl active:scale-95 transition-transform"
           >
             <i class="fa-solid fa-right-from-bracket"></i>
             Cerrar Sesión
