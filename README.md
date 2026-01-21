@@ -25,25 +25,26 @@ App web del la empresa CENTRAL MADEIRENSE, enfocada en un diseño UI/UX mejorado
 
 ```
 central-app/
-├── index.html     # Pantalla de Inicio (Promociones y Zona de Ahorro)
-├── pages/                  # Vistas secundarias
-│   ├── historial.html      # Historial de compras (el que diseñamos)
-│   ├── categorias.html     # Carnicería, Frutería, etc.
-│   └── perfil.html         # Datos de Bryant
-├── asset/                  # Recursos que no cambian (estáticos)
-│   ├── css/
-│   │   └── style.css       # Estilos personalizados y Tailwind
-│   ├── svg/                # Logos vectoriales (CM, Cashea, BCV)
-│   │   ├── logo-central.svg
-│   │   └── logo-cashea.svg
-│   └── img/                # Fotografías de productos y banners
-│       ├── promociones/
-│       └── productos/
-└── js/                     # Lógica de programación
-    ├── main.js             # Funciones globales (notificaciones, moneda)
-    └── carrusel.js         # Lógica del scroll horizontal
-```
+├── dist/               # Archivos listos para producción (generados)
+│   └── css/
+│       └── output.css     # Aquí es donde compila Tailwind
+├── src/                   # Tu código fuente (lo que tú editas)
+│   ├── asset/
+│   │   ├── img/
+│   │   ├── svg/
+|   |   |   ├── 
+│   │   └── css/
+│   │       └── input.css  # Solo el archivo con las directivas @tailwind
+│   ├── js/
+│   │   ├── main.js
+│   │   └── carrusel.js
+│   └── page/              # Tus subpáginas
+│       ├── categorias.html
+│       └── ...
+├── index.html             # Punto de entrada principal (en la raíz)
+└── package.json           # Dependencias y scripts de compilación
 
+```
 ## Authors
 
 - [@bafaf23](https://www.github.com/bafaf23)
