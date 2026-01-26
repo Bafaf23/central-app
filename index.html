@@ -1,490 +1,745 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- link de ccs externo -->
+    <link rel="stylesheet" href="dist/css/output.css" />
+    <!-- icono -->
+    <link rel="icon" href="src/asset/svg/Logo_centralmadirense.svg" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Central Madeirense</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- fontawesone -->
-  <script src="https://kit.fontawesome.com/a74559d35e.js" crossorigin="anonymous"></script>
-  <!-- link de ccs externo -->
-  <link rel="stylesheet" href="dist/css/output.css" />
-  <!-- icono -->
-  <link rel="icon" href="src/asset/svg/Logo_centralmadirense.svg" />
-  <script>
-    // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
-    if (
-      localStorage.getItem("color-theme") === "dark" ||
-      (!("color-theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  </script>
-  <title>Central Madeirense</title>
-</head>
-
-<body class="dark:bg-slate-900">
-  <!-- wrapper -->
-  <div class="flex flex-col justify-between min-h-screen">
-    <div>
-      <!-- header -->
-      <header>
-        <!-- header movil -->
-        <div
-          class="flex justify-between items-center p-2 bg-white dark:border-slate-800 dark:bg-slate-950 border border-gray-50 rounded-b-2xl shadow md:hidden lg:hidden">
-          <!-- avatar user -->
-          <a href="src/pages/perfil.html">
-            <div class="cursor-pointer w-13 h-13 rounded-full overflow-hidden">
-              <img
-                src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
-                alt="avatar user" class="w-full h-full object-cover rounded-full border-2 border-transparent" />
-            </div>
-          </a>
-          <!-- logo de la empresa -->
-          <div class="w-25 overflow-hidden">
-            <img src="src/asset/svg/Logo_centralmadirense.svg" alt="Central Madeirense"
-              class="w-full h-full object-contain" />
-          </div>
-
-          <!-- carrito y notificaciones -->
-          <div class="flex gap-2 text-2xl">
-            <!-- campana -->
-            <a href="src/pages/notificaciones.html">
-              <div class="relative">
-                <i class="fa-solid fa-bell text-orange-400"></i>
-                <span
-                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center">+9</span>
-              </div>
-            </a>
-
-            <!-- carrito -->
-            <a href="">
-              <div class="relative">
-                <i class="fa-solid fa-cart-shopping text-red-600"></i>
-                <span
-                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center">12</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- menu desktop -->
-        <div
-          class="justify-around items-center p-2 bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-b-2xl shadow md:flex lg:flex hidden gap-2">
-          <!-- logo de la empresa -->
-          <div class="w-24 overflow-hidden shrink-0">
-            <img src="src/asset/svg/Logo_centralmadirense.svg" alt="Central Madeirense"
-              class="w-full h-full object-contain" />
-          </div>
-
-          <!-- moneda -->
-          <div class="inline-block relative group">
-            <div class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit">
-              <p class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none">
-                Ver precios en:
-              </p>
-              <div class="flex items-center gap-3 w-fit dark:bg-slate-700 bg-gray-100 rounded-full p-1 cursor-pointer">
-                <!-- icono -->
-                <div class="bg-green-200 p-1 rounded-full text-green-600">
-                  <i class="fa-solid fa-dollar-sign"></i>
-                </div>
-              </div>
-            </div>
-            <!-- opciones -->
-            <div
-              class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
-              id="dropdownMenu">
-              <a href="#"
-                class="inline-flex items-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
-                <span class="bg-orange-400 p-1 rounded-full">Bs</span>
-                Bolivares</a>
-
-            </div>
-          </div>
-
-          <!-- barra de busqueda -->
-          <div class="flex items-center w-1/2">
-            <!-- Contenedor principal de la barra -->
-            <div
-              class="flex w-full bg-white border-2 dark:border-slate-800 border-gray-100 rounded-full focus-within:border-red-500 transition-all overflow-hidden">
-              <!-- 1. Selector de Categorías (Izquierda) -->
-              <div class="relative hidden md:block">
-                <select
-                  class="h-full pl-4 pr-8 bg-gray-50 text-gray-600 text-sm font-bold border-r border-gray-100 outline-none appearance-none cursor-pointer hover:bg-gray-100 transition-colors dark:bg-slate-900 dark:border-slate-800 dark:hover:bg-slate-800">
-                  <option>Todas</option>
-                  <option>Víveres</option>
-                  <option>Frutería</option>
-                  <option>Carnicería</option>
-                  <option>Charcutería</option>
-                  <option>Hogar</option>
-                </select>
-                <!-- Icono del selector -->
-                <i
-                  class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 pointer-events-none"></i>
-              </div>
-              <!-- 2. Input de Texto -->
-              <input type="text" placeholder="Busca productos, marcas y más..."
-                class="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-400 dark:bg-slate-900 dark:border-slate-800" />
-              <!-- 3. Botón de Búsqueda (Derecha) -->
-              <button
-                class="bg-red-600 hover:bg-red-700 text-white p-2 flex items-center justify-center transition-colors group">
-                <i class="fa-solid fa-magnifying-glass group-hover:scale-110 transition-transform"></i>
-                <span class="ml-2 hidden lg:block font-bold text-sm">Buscar</span>
-              </button>
-            </div>
-          </div>
-          <!-- carrito notificaciones perfil y ubucacion de tienda -->
-          <div class="flex gap-5 text-2xl justify-center items-center">
+  <body class="dark:bg-slate-900">
+    <!-- wrapper -->
+    <div class="flex flex-col justify-between min-h-screen">
+      <div>
+        <!-- header -->
+        <header>
+          <!-- header movil -->
+          <div
+            class="flex justify-between items-center p-2 bg-white dark:border-slate-800 dark:bg-slate-950 border border-gray-50 rounded-b-2xl shadow md:hidden lg:hidden"
+          >
             <!-- avatar user -->
             <a href="src/pages/perfil.html">
-              <div class="text-sm flex flex-col items-center justify-center">
-                <div class="cursor-pointer w-13 h-13 rounded-full overflow-hidden">
-                  <img
-                    src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
-                    alt="avatar user" class="w-full h-full object-cover rounded-full border-2 border-transparent" />
-                </div>
-
-                <div>
-                  <span class="text-[10px] text-orange-400 font-bold">Hola, Bryant</span>
-                </div>
+              <div
+                class="cursor-pointer w-13 h-13 rounded-full overflow-hidden"
+              >
+                <img
+                  src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
+                  alt="avatar user"
+                  class="w-full h-full object-cover rounded-full border-2 border-transparent"
+                />
               </div>
             </a>
-            <!-- Tienda actual -->
-            <div class="inline-block relative group">
-              <!-- tienda actual -->
-              <div
-                class="flex items-center justify-center gap-2 cursor-pointer active:opacity-70 transition-opacity w-fit"
-                id="menuButton">
-                <!-- icono -->
-                <div class="bg-red-100 p-2 rounded-full flex justify-center items-center">
-                  <i class="fa-solid fa-location-dot text-red-600 text-sm w-full h-full"></i>
+            <!-- logo de la empresa -->
+            <div class="w-25 overflow-hidden logo">
+              <img
+                src="src/asset/svg/Logo_centralmadirense.svg"
+                alt="Central Madeirense"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- carrito y notificaciones -->
+            <div class="flex gap-2 text-2xl">
+              <!-- campana -->
+              <a href="src/pages/notificaciones.html">
+                <div class="relative">
+                  <i class="fa-solid fa-bell text-orange-400"></i>
+                  <span
+                    class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center"
+                    >+9</span
+                  >
                 </div>
-                <!-- infomacion -->
-                <div>
-                  <p class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none">
-                    Estás comprando en:
-                  </p>
-                  <div class="flex items-center gap-1">
-                    <span class="text-sm font-bold dark:text-slate-50 text-gray-800">Central Madeirense - La
-                      Lagunita</span>
-                    <i class="fa-solid fa-chevron-down text-[10px] text-red-600"></i>
+              </a>
+
+              <!-- carrito -->
+              <a href="">
+                <div class="relative">
+                  <i class="fa-solid fa-cart-shopping text-red-600"></i>
+                  <span
+                    class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center"
+                    >12</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- menu desktop -->
+          <div
+            class="justify-around items-center p-2 bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-b-2xl shadow md:flex lg:flex hidden gap-2"
+          >
+            <!-- logo de la empresa -->
+            <div class="w-24 overflow-hidden shrink-0 logo">
+              <img
+                src="src/asset/svg/Logo_centralmadirense.svg"
+                alt="Central Madeirense"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- moneda -->
+            <div class="inline-block relative group">
+              <div
+                class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
+              >
+                <p
+                  class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none"
+                >
+                  Ver precios en:
+                </p>
+                <div
+                  class="flex items-center gap-3 w-fit dark:bg-slate-700 bg-gray-100 rounded-full p-1 cursor-pointer"
+                >
+                  <!-- icono -->
+                  <div class="bg-green-200 p-1 rounded-full text-green-600">
+                    <i class="fa-solid fa-dollar-sign"></i>
                   </div>
                 </div>
               </div>
               <!-- opciones -->
               <div
                 class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
-                id="dropdownMenu">
-                <a href="#"
-                  class="block px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - La Lameda</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - La Boyera</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - La Concordia</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - San Antonio de los altos</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - Plaza las Americas</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - Los Ruises</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - Vista Hermosa</a>
-                <a href="#"
-                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50">
-                  <i class="fa-solid fa-shop"></i>
-                  Central Madeirense - Catia</a>
+                id="dropdownMenu"
+              >
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                >
+                  <span class="bg-orange-400 p-1 rounded-full">Bs</span>
+                  Bolivares</a
+                >
               </div>
             </div>
-            <!-- campana -->
-            <a href="src/pages/notificaciones.html">
-              <div class="relative">
-                <i class="fa-solid fa-bell text-orange-400"></i>
-                <span
-                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center">+9</span>
-              </div>
-            </a>
-            <!-- carrito -->
-            <a href="">
-              <div class="relative">
-                <i class="fa-solid fa-cart-shopping text-red-600"></i>
-                <span
-                  class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center">12</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- sub headers -->
-        <div class="hidden md:flex lg:flex">
-          <nav class="w-full p-0.5">
-            <ul class="flex gap-5 justify-evenly items-center">
-              <li class="dark:text-slate-50 text-gray-400 cursor-pointer">
-                Viveres
-                <i class="fa-solid fa-chevron-down text-[10px] text-orange-300"></i>
-              </li>
-              <li class="text-gray-400 cursor-pointer dark:text-slate-50">
-                Carniceria
-                <i class="fa-solid fa-chevron-down text-[10px] text-orange-300"></i>
-              </li>
-              <li class="text-gray-400 cursor-pointer dark:text-slate-50">
-                Charcuteria
-                <i class="fa-solid fa-chevron-down text-[10px] text-orange-300"></i>
-              </li>
-              <li class="text-gray-400 cursor-pointer dark:text-slate-50">
-                Fruteria
-                <i class="fa-solid fa-chevron-down text-[10px] text-orange-300"></i>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <!-- Main -->
-      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
-        <!-- Ubicacion de sucursales y monda (movil) -->
-      <section class="flex justify-between gap-1 md:hidden lg:hidden">
-          <!-- Tienda actual -->
-          <div class="flex items-center gap-2 cursor-pointer active:opacity-70 transition-opacity w-fit">
-            <!-- icono -->
-            <div class="bg-red-100 p-1.5 rounded-full">
-              <i class="fa-solid fa-location-dot text-red-600 text-sm"></i>
-            </div>
-            <!-- infomacion -->
-            <div>
-              <p class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400">
-                Estás comprando en:
-              </p>
-              <div class="flex items-center gap-1">
-                <span class="text-sm font-bold text-gray-800 dark:text-slate-50">Central Madeirense - La Lagunita</span>
-                <i class="fa-solid fa-chevron-down text-[10px] text-red-600"></i>
+
+            <!-- barra de busqueda -->
+            <div class="flex items-center w-1/2">
+              <!-- Contenedor principal de la barra -->
+              <div
+                class="flex w-full bg-white border-2 dark:border-slate-800 border-gray-100 rounded-full focus-within:border-red-500 transition-all overflow-hidden"
+              >
+                <!-- 1. Selector de Categorías (Izquierda) -->
+                <div class="relative hidden md:block">
+                  <select
+                    class="h-full pl-4 pr-8 bg-gray-50 text-gray-600 text-sm font-bold border-r border-gray-100 outline-none appearance-none cursor-pointer hover:bg-gray-100 transition-colors dark:bg-slate-900 dark:border-slate-800 dark:hover:bg-slate-800"
+                  >
+                    <option>Todas</option>
+                    <option>Víveres</option>
+                    <option>Frutería</option>
+                    <option>Carnicería</option>
+                    <option>Charcutería</option>
+                    <option>Hogar</option>
+                  </select>
+                  <!-- Icono del selector -->
+                  <i
+                    class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-gray-400 pointer-events-none"
+                  ></i>
+                </div>
+                <!-- 2. Input de Texto -->
+                <input
+                  type="text"
+                  placeholder="Busca productos, marcas y más..."
+                  class="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-400 dark:bg-slate-900 dark:border-slate-800"
+                />
+                <!-- 3. Botón de Búsqueda (Derecha) -->
+                <button
+                  class="bg-red-600 hover:bg-red-700 text-white p-2 flex items-center justify-center transition-colors group"
+                >
+                  <i
+                    class="fa-solid fa-magnifying-glass group-hover:scale-110 transition-transform"
+                  ></i>
+                  <span class="ml-2 hidden lg:block font-bold text-sm"
+                    >Buscar</span
+                  >
+                </button>
               </div>
             </div>
-          </div>
-          <!-- moneda -->
-          <div lass="inline-block relative group">
-            <div class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit">
-              <p class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400">
-                Ver precios en:
-              </p>
-              <div class="flex items-center gap-3 w-fit dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer">
-                <!-- icono -->
-                <div class="bg-green-200 dark:bg-green-300 p-1 rounded-full text-green-600">
-                  <i class="fa-solid fa-dollar-sign"></i>
+            <!-- carrito notificaciones perfil y ubucacion de tienda -->
+            <div class="flex gap-5 text-2xl justify-center items-center">
+              <!-- avatar user -->
+              <a href="src/pages/perfil.html">
+                <div class="text-sm flex flex-col items-center justify-center">
+                  <div
+                    class="cursor-pointer w-13 h-13 rounded-full overflow-hidden"
+                  >
+                    <img
+                      src="https://bitacoraeconomica.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-2.20.21-PM.jpeg"
+                      alt="avatar user"
+                      class="w-full h-full object-cover rounded-full border-2 border-transparent"
+                    />
+                  </div>
+
+                  <div>
+                    <span class="text-[10px] text-orange-400 font-bold"
+                      >Hola, Bryant</span
+                    >
+                  </div>
+                </div>
+              </a>
+              <!-- Tienda actual -->
+              <div class="inline-block relative group">
+                <!-- tienda actual -->
+                <div
+                  class="flex items-center justify-center gap-2 cursor-pointer active:opacity-70 transition-opacity w-fit"
+                  id="menuButton"
+                >
+                  <!-- icono -->
+                  <div
+                    class="bg-red-100 p-2 rounded-full flex justify-center items-center"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot text-red-600 text-sm w-full h-full"
+                    ></i>
+                  </div>
+                  <!-- infomacion -->
+                  <div>
+                    <p
+                      class="text-[10px] dark:text-slate-400 text-gray-500 font-bold uppercase leading-none"
+                    >
+                      Estás comprando en:
+                    </p>
+                    <div class="flex items-center gap-1">
+                      <span
+                        class="text-sm font-bold dark:text-slate-50 text-gray-800"
+                        >Central Madeirense - La Lagunita</span
+                      >
+                      <i
+                        class="fa-solid fa-chevron-down text-[10px] text-red-600"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+                <!-- opciones -->
+                <div
+                  class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
+                  id="dropdownMenu"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - La Lameda</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - La Boyera</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - La Concordia</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - San Antonio de los altos</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - Plaza las Americas</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - Los Ruises</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - Vista Hermosa</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                    Central Madeirense - Catia</a
+                  >
                 </div>
               </div>
+              <!-- campana -->
+              <a href="src/pages/notificaciones.html">
+                <div class="relative">
+                  <i class="fa-solid fa-bell text-orange-400"></i>
+                  <span
+                    class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-orange-400 w-5 h-5 flex items-center justify-center"
+                    >+9</span
+                  >
+                </div>
+              </a>
+              <!-- carrito -->
+              <a href="">
+                <div class="relative">
+                  <i class="fa-solid fa-cart-shopping text-red-600"></i>
+                  <span
+                    class="absolute text-[10px] -right-1 -top-2 bg-white rounded-full border border-gray-200 font-bold text-red-400 w-5 h-5 flex items-center justify-center"
+                    >12</span
+                  >
+                </div>
+              </a>
             </div>
-            <!-- opciones -->
-            <!-- opciones -->
+          </div>
+          <!-- sub headers -->
+          <div class="hidden md:flex lg:flex">
+            <nav class="w-full p-0.5">
+              <ul class="flex gap-5 justify-evenly items-center">
+                <li class="dark:text-slate-50 text-gray-400 cursor-pointer">
+                  Viveres
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-orange-300"
+                  ></i>
+                </li>
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
+                  Carniceria
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-orange-300"
+                  ></i>
+                </li>
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
+                  Charcuteria
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-orange-300"
+                  ></i>
+                </li>
+                <li class="text-gray-400 cursor-pointer dark:text-slate-50">
+                  Fruteria
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-orange-300"
+                  ></i>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <!-- Main -->
+        <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+          <!-- Ubicacion de sucursales y monda (movil) -->
+          <section
+            class="flex justify-between items-center gap-1 md:hidden lg:hidden"
+          >
+            <!-- Tienda actual -->
             <div
-              class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden"
-              id="dropdownMenu">
-              <a href="#"
-                class="inline-flex items-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
-                <span class="bg-orange-400 p-1 rounded-full">Bs</span>
-                Bolivares</a>
-
-            </div>
-          </div>
-      </section>
-      <!-- barra de separacion -->
-      <div>
-      <hr class="border-t border-gray-100 w-40 mx-auto dark:border-slate-700" />
-      </div>
-      <!-- Contenedor principal: Optimizado para Desktop 2026 -->
-      <section
-      class="p-2 dark:bg-slate-950 bg-gray-100 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 h-[300px] md:h-[450px]">
-      <!-- Panel 1: Carrusel (Principal) -->
-      <div class="relative md:col-span-2 h-full overflow-hidden group rounded-md">
-        <!-- El carrusel con Snap para móviles -->
-        <div class="flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide" id="anuncio-carrusel">
-          <!-- Promoción 1 -->
-          <div class="relative w-full flex-shrink-0 h-full snap-center">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-            <div class="absolute z-20 bottom-6 left-6 right-6">
-              <span
-                class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">¡Viva
-                mejor por menos!</span>
-              <h3 class="text-white font-bold text-2xl md:text-3xl mt-2 leading-tight">
-                ¡Somos lo que te llevas a casa!
-              </h3>
-            </div>
-            <img
-              src="https://scontent-bog2-2.cdninstagram.com/v/t39.30808-6/588510439_841801725691373_5857337001915439628_n.png?_nc_cat=111&ig_cache_key=Mzc3MzE3OTMwMjE5MzE2NTIzOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=LMCFriOTVMcQ7kNvwGHRDeo&_nc_oc=Adl6EIUdymm42nw4CQgI8-Ml2y0QRAWGH-Ku9Nx6F2xk0LEZIj1FW3yZzdtDoSO-IpE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-2.cdninstagram.com&_nc_gid=6m2hAIsuYcEVAtHZB3c_bA&oh=00_AfqQiWIzGQVT_Qg4zHu7-h5dv1I6l3Bj9nEFuQNLGD39xg&oe=696F0313"
-              class="w-full h-full object-cover" alt="Promo 1" />
-          </div>
-
-          <!-- Promoción 2 -->
-          <div class="relative min-w-full flex-shrink-0 h-full snap-center">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-            <div class="absolute z-20 bottom-6 left-6 right-6">
-              <span
-                class="bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Fruver</span>
-              <h3 class="text-white font-bold text-2xl md:text-3xl mt-2 leading-tight">
-                Aliados para una semana de energía
-              </h3>
-            </div>
-            <img
-              src="https://scontent-bog2-1.cdninstagram.com/v/t39.30808-6/614638140_902086372996241_5733087832711910914_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzgwOTk5MTU2NTU2MTgyNzI3OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=B-QzmMd3htAQ7kNvwF6Yh1K&_nc_oc=AdlL2HQGRBiVo0qVx1HLTzWZnME4VP5wNV7foxhLXoDbwcosRtT-UYD-qTWDh2PrzyY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=kVN2-jEKYTwedgZNxoUb6Q&oh=00_AfpLL-TOGJuRo_JfwrB6FP42IKAIHvyyYERtvKbryDJxKw&oe=696EFE10"
-              class="w-full h-full object-cover" alt="Promo 2" />
-          </div>
-        </div>
-        <!-- Indicadores: Visibles solo en móvil (md:hidden) -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:hidden" id="dots-container">
-          <div class="dot w-6 h-2 bg-red-600 rounded-full transition-all duration-300"></div>
-          <div class="dot w-2 h-2 bg-gray-300 rounded-full transition-all duration-300"></div>
-        </div>
-      </div>
-      <!-- Panel 2 y 3 (Solo Desktop: md:flex) -->
-      <div class="hidden md:flex flex-col gap-4 h-full">
-        <!-- Box 2: Oferta destacada -->
-        <div class="relative h-54 overflow-hidden rounded-md group cursor-pointer shadow-sm">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
-          <div class="absolute z-20 top-4 left-4">
-            <span class="bg-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase">Especial</span>
-          </div>
-          <img
-            src="https://scontent-bog2-1.cdninstagram.com/v/t51.82787-15/590902616_18506788384069518_1546865599963969828_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=Mzc3NjE2NTExNjc0OTA5OTQ1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM0Ni5zZHIuQzMifQ%3D%3D&_nc_ohc=cLXuPHTmCZgQ7kNvwEPowM5&_nc_oc=AdlPY1HzbhnAw5pIPSTbL9MI-gYj4Gf4YCpRa9Amesm0Myev4fccHZovuLlKG92K_IA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=29Hy5gCwf2lde9zbQVV6Sw&oh=00_AfqOV4wVWb6uvAgMuOjNJe3bhhcIReykkCNzGbt8M0xQeQ&oe=696F2C9E"
-            class="object-cover h-full w-full group-hover:scale-110 transition-transform duration-700"
-            alt="Publicidad 1" />
-        </div>
-
-        <!-- Box 3: Cashea Info -->
-        <div class="relative h-50 overflow-hidden rounded-md group cursor-pointer shadow-sm">
-          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
-          <div class="absolute z-20 bottom-4 left-4">
-            <p class="text-white font-bold text-sm">Paga con Cashea</p>
-          </div>
-          <img
-            src="https://scontent-bog2-1.cdninstagram.com/v/t39.30808-6/558799421_783818424823037_8268194916643929464_n.png?_nc_cat=105&ig_cache_key=Mzc0MzMxMjQ4MTY0OTQ5ODAxNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=Xqa9auAuA-EQ7kNvwH_89kV&_nc_oc=AdmdPEdoF8rJVLJN5ZC0qSuWe21EMEbot_xRFacfUnZfRgvhfb3asgBMJmlpPXMIVv8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=ru2wpy5C7FVXZe47ruTypw&oh=00_Afreaimq6vK8PuErhRw3ZTZhpd8R5BBvZydPehVvh9rQxQ&oe=696F0D76"
-            class="object-cover h-full w-full group-hover:scale-110 transition-transform duration-700"
-            alt="Publicidad 2" />
-        </div>
-      </div>
-      </section>
-      <!-- zona de ahorro -->
-     <section class="flex flex-col gap-2">
-      <!-- cabezera de la secction -->
-      <div class="flex justify-between items-center">
-        <h2 class="text-xl font-bold text-red-600 flex items-center gap-2">
-          <i class="fa-solid fa-tags text-red-600"></i>
-          Promociones de hoy
-        </h2>
-        <a href="#" class="text-red-600 font-semibold text-sm">Ver todo</a>
-      </div>
-      <!-- contenedor de productos en promocion -->
-      <div class="grid grid-cols-2 gap-4 dark:bg-slate-950 bg-gray-100 rounded-md p-1">
-        <!-- producto 1 -->
-        <div
-          class="border dark:border-slate-800 border-gray-100 rounded-md shadow-sm dark:bg-slate-900 bg-white p-2 flex flex-col gap-0 relative w-50 md:w-80 lg:80 h-fit">
-          <!-- Badge de Descuento -->
-          <div class="absolute top-3 left-3 bg-orange-400 text-white text-[10px] font-bold px-2 py-1 z-10 rounded-md">
-            MEGAPRECIO
-          </div>
-          <!-- img del producto -->
-          <div class="w-full h-full">
-            <img
-              src="https://www.ceupe.com/images/easyblog_articles/3461/b2ap3_large_productos-en-carrito-de-compra.jpg"
-              alt="producto" class="object-contain rounded-md" />
-          </div>
-          <!-- Información -->
-          <div>
-            <p class="text-[10px] dark:text-slate-400 text-gray-400 uppercase font-bold tracking-wider">
-              viveres
-            </p>
-            <h3 class="text-sm font-semibold dark:text-slate-50 text-gray-700 line-clamp-2 leading-tight h-10">
-              Harina de Maíz Precocida P.A.N. 1kg
-            </h3>
-            <!-- Precios -->
-            <div class="mt-2">
-              <div class="flex items-center gap-2">
-                <span class="text-lg font-black text-red-600">$1.10</span>
-                <span class="text-xs dark:text-slate-400 text-gray-400 line-through">$1.35</span>
+              class="cursor-pointer active:opacity-70 transition-opacity w-fit relative inline-block"
+              id="tiendasMovil"
+            >
+              <div class="inline-flex gap-2">
+                <!-- icono -->
+                <div class="bg-red-100 p-1.5 rounded-full">
+                  <i class="fa-solid fa-location-dot text-red-600 text-sm"></i>
+                </div>
+                <!-- infomacion -->
+                <div>
+                  <p
+                    class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
+                  >
+                    Estás comprando en:
+                  </p>
+                  <div class="flex items-center gap-1">
+                    <span
+                      class="text-sm font-bold text-gray-800 dark:text-slate-50"
+                      >Central Madeirense - La Lagunita</span
+                    >
+                    <i
+                      class="fa-solid fa-chevron-down text-[10px] text-red-600"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <!-- opciones -->
+              <div
+                class="absolute left-0 mt-2 w-fit bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl transition-all duration-300 z-50 overflow-hidden invisible opacity-0"
+                id="dropdownMenuMovil"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - La Lameda</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - La Boyera</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - La Concordia</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - San Antonio de los altos</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - Plaza las Americas</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - Los Ruises</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - Vista Hermosa</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors dark:text-slate-50"
+                >
+                  <i class="fa-solid fa-shop"></i>
+                  Central Madeirense - Catia</a
+                >
               </div>
             </div>
+            <!-- moneda -->
+            <div class="inline-block relative">
+              <div
+                class="flex flex-col items-center gap-1 active:opacity-70 transition-opacity w-fit"
+                id="verpercio"
+              >
+                <p
+                  class="text-[10px] text-gray-500 font-bold uppercase leading-none dark:text-slate-400"
+                >
+                  Ver precios en:
+                </p>
+                <div
+                  class="flex items-center gap-3 w-fit dark:bg-slate-600 bg-gray-100 rounded-full p-1 cursor-pointer"
+                >
+                  <!-- icono -->
+                  <div
+                    class="bg-green-200 dark:bg-green-300 p-1 rounded-full text-green-600"
+                  >
+                    <i class="fa-solid fa-dollar-sign"></i>
+                  </div>
+                </div>
+              </div>
+              <!-- opciones -->
+              <div
+                class="absolute right-0-2 mt-2 w-full bg-white dark:bg-slate-950 dark:border-slate-800 border border-gray-50 rounded-2xl shadow-xl transition-all duration-300 z-50 overflow-hidden invisible opacity-0"
+                id="dropdownMenuMonedaMovil"
+              >
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm dark:text-slate-50 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors w-full"
+                >
+                  <span class="bg-orange-400 p-1 rounded-full">Bs</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- barra de separacion -->
+          <div>
+            <hr
+              class="border-t border-gray-100 w-40 mx-auto dark:border-slate-700"
+            />
           </div>
-          <!-- Botón Añadir -->
-          <button
-            class="w-full mt-4 bg-red-600 active:scale-95 transition-transform text-white font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md dark:shadow-none shadow-red-200">
-            <i class="fa-solid fa-plus text-xs"></i>
-            Añadir
-          </button>
-        </div>
-      </div>
-      </section>
-     <!-- publicidad -->
-      <section class="md:hidden lg:hidden">
-      <div class="relative w-full h-20">
-        <div class="bg-gradient-to-t from-black/70 to-black/20 via-transparent absolute w-full h-full rounded-md"></div>
-        <h4 class="absolute text-xl text-white font-bold bottom-2 left-2">
-          publicidad
-        </h4>
-        <img src="https://www.tendenciainternacional.com/wp-content/uploads/2025/06/BeFunky-collage01.jpg"
-          alt="publicidad" class="w-full h-full object-cover rounded-md" />
-      </div>
-      </section>
-    </main>
-  </div>
-  <!-- menu movil -->
-  <aside
-    class="bg-white dark:bg-slate-950 dark:border-slate-800 p-3 border-t border-gray-100 rounded-t-2xl shadow-[0_-5px_15px_rgba(0,0,0,0.05)] sticky bottom-0 z-50 md:hidden lg:hidden">
-    <nav class="flex justify-between items-center h-12">
-      <!-- Lado Izquierdo -->
-      <div class="flex flex-1 justify-around items-center">
-        <a href="#"
-          class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors">
-          <i class="fa-solid fa-bread-slice text-lg"></i>
-          <span class="text-[10px] font-bold mt-1">Víveres</span>
-        </a>
-        <a href="#"
-          class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors">
-          <i class="fa-solid fa-seedling text-lg"></i>
-          <span class="text-[10px] font-bold mt-1">Frutería</span>
-        </a>
-      </div>
+          <!-- Contenedor principal: Optimizado para Desktop 2026 -->
+          <section
+            class="p-2 dark:bg-slate-950 bg-gray-100 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4 h-[300px] md:h-[450px]"
+          >
+            <!-- Panel 1: Carrusel (Principal) -->
+            <div
+              class="relative md:col-span-2 h-full overflow-hidden group rounded-md"
+            >
+              <!-- El carrusel con Snap para móviles -->
+              <div
+                class="flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+                id="anuncio-carrusel"
+              >
+                <!-- Promoción 1 -->
+                <div class="relative w-full shrink-0 h-full snap-center">
+                  <div
+                    class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent z-10"
+                  ></div>
+                  <div class="absolute z-20 bottom-6 left-6 right-6">
+                    <span
+                      class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider"
+                      >¡Viva mejor por menos!</span
+                    >
+                    <h3
+                      class="text-white font-bold text-2xl md:text-3xl mt-2 leading-tight"
+                    >
+                      ¡Somos lo que te llevas a casa!
+                    </h3>
+                  </div>
+                  <img
+                    src="https://scontent-bog2-2.cdninstagram.com/v/t39.30808-6/588510439_841801725691373_5857337001915439628_n.png?_nc_cat=111&ig_cache_key=Mzc3MzE3OTMwMjE5MzE2NTIzOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=LMCFriOTVMcQ7kNvwGHRDeo&_nc_oc=Adl6EIUdymm42nw4CQgI8-Ml2y0QRAWGH-Ku9Nx6F2xk0LEZIj1FW3yZzdtDoSO-IpE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-2.cdninstagram.com&_nc_gid=6m2hAIsuYcEVAtHZB3c_bA&oh=00_AfqQiWIzGQVT_Qg4zHu7-h5dv1I6l3Bj9nEFuQNLGD39xg&oe=696F0313"
+                    class="w-full h-full object-cover"
+                    alt="Promo 1"
+                  />
+                </div>
 
-      <!-- Botón Central Flotante -->
-      <div class="relative -translate-y-2">
-        <a href="#"
-          class="bg-red-600 w-14 h-14 rounded-full flex flex-col justify-center items-center dark:text-slate-50 text-white shadow-lg shadow-red-200 dark:shadow-red-600 border-4 border-white dark:border-slate-300 active:scale-90 transition-transform">
-          <i class="fa-solid fa-house text-xl"></i>
-          <span class="text-[10px] font-bold">Inicio</span>
-        </a>
-      </div>
+                <!-- Promoción 2 -->
+                <div class="relative min-w-full shrink-0 h-full snap-center">
+                  <div
+                    class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent z-10"
+                  ></div>
+                  <div class="absolute z-20 bottom-6 left-6 right-6">
+                    <span
+                      class="bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider"
+                      >Fruver</span
+                    >
+                    <h3
+                      class="text-white font-bold text-2xl md:text-3xl mt-2 leading-tight"
+                    >
+                      Aliados para una semana de energía
+                    </h3>
+                  </div>
+                  <img
+                    src="https://scontent-bog2-1.cdninstagram.com/v/t39.30808-6/614638140_902086372996241_5733087832711910914_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzgwOTk5MTU2NTU2MTgyNzI3OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=B-QzmMd3htAQ7kNvwF6Yh1K&_nc_oc=AdlL2HQGRBiVo0qVx1HLTzWZnME4VP5wNV7foxhLXoDbwcosRtT-UYD-qTWDh2PrzyY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=kVN2-jEKYTwedgZNxoUb6Q&oh=00_AfpLL-TOGJuRo_JfwrB6FP42IKAIHvyyYERtvKbryDJxKw&oe=696EFE10"
+                    class="w-full h-full object-cover"
+                    alt="Promo 2"
+                  />
+                </div>
+              </div>
+              <!-- Indicadores: Visibles solo en móvil (md:hidden) -->
+              <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:hidden"
+                id="dots-container"
+              >
+                <div
+                  class="dot w-6 h-2 bg-red-600 rounded-full transition-all duration-300"
+                ></div>
+                <div
+                  class="dot w-2 h-2 bg-gray-300 rounded-full transition-all duration-300"
+                ></div>
+              </div>
+            </div>
+            <!-- Panel 2 y 3 (Solo Desktop: md:flex) -->
+            <div class="hidden md:flex flex-col gap-4 h-full">
+              <!-- Box 2: Oferta destacada -->
+              <div
+                class="relative h-54 overflow-hidden rounded-md group cursor-pointer shadow-sm"
+              >
+                <div
+                  class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500 z-10"
+                ></div>
+                <div class="absolute z-20 top-4 left-4">
+                  <span
+                    class="bg-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase"
+                    >Especial</span
+                  >
+                </div>
+                <img
+                  src="https://scontent-bog2-1.cdninstagram.com/v/t51.82787-15/590902616_18506788384069518_1546865599963969828_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=Mzc3NjE2NTExNjc0OTA5OTQ1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM0Ni5zZHIuQzMifQ%3D%3D&_nc_ohc=cLXuPHTmCZgQ7kNvwEPowM5&_nc_oc=AdlPY1HzbhnAw5pIPSTbL9MI-gYj4Gf4YCpRa9Amesm0Myev4fccHZovuLlKG92K_IA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=29Hy5gCwf2lde9zbQVV6Sw&oh=00_AfqOV4wVWb6uvAgMuOjNJe3bhhcIReykkCNzGbt8M0xQeQ&oe=696F2C9E"
+                  class="object-cover h-full w-full group-hover:scale-110 transition-transform duration-700"
+                  alt="Publicidad 1"
+                />
+              </div>
 
-      <!-- Lado Derecho -->
-      <div class="flex flex-1 justify-around items-center">
-        <a href="#"
-          class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors">
-          <i class="fa-solid fa-cheese text-lg"></i>
-          <span class="text-[10px] font-bold mt-1">Charcutería</span>
-        </a>
-        <a href="#"
-          class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors">
-          <i class="fa-solid fa-drumstick-bite text-lg"></i>
-          <span class="text-[10px] font-bold mt-1">Carnicería</span>
-        </a>
+              <!-- Box 3: Cashea Info -->
+              <div
+                class="relative h-50 overflow-hidden rounded-md group cursor-pointer shadow-sm"
+              >
+                <div
+                  class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500 z-10"
+                ></div>
+                <div class="absolute z-20 bottom-4 left-4">
+                  <p class="text-white font-bold text-sm">Paga con Cashea</p>
+                </div>
+                <img
+                  src="https://scontent-bog2-1.cdninstagram.com/v/t39.30808-6/558799421_783818424823037_8268194916643929464_n.png?_nc_cat=105&ig_cache_key=Mzc0MzMxMjQ4MTY0OTQ5ODAxNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=Xqa9auAuA-EQ7kNvwH_89kV&_nc_oc=AdmdPEdoF8rJVLJN5ZC0qSuWe21EMEbot_xRFacfUnZfRgvhfb3asgBMJmlpPXMIVv8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bog2-1.cdninstagram.com&_nc_gid=ru2wpy5C7FVXZe47ruTypw&oh=00_Afreaimq6vK8PuErhRw3ZTZhpd8R5BBvZydPehVvh9rQxQ&oe=696F0D76"
+                  class="object-cover h-full w-full group-hover:scale-110 transition-transform duration-700"
+                  alt="Publicidad 2"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- zona de ahorro -->
+          <section class="flex flex-col gap-2">
+            <!-- cabezera de la secction -->
+            <div class="flex justify-between items-center">
+              <h2
+                class="text-xl font-bold text-red-600 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-tags text-red-600"></i>
+                Promociones de hoy
+              </h2>
+              <a href="#" class="text-red-600 font-semibold text-sm"
+                >Ver todo</a
+              >
+            </div>
+            <!-- contenedor de productos en promocion -->
+            <div
+              class="grid grid-cols-2 gap-4 dark:bg-slate-950 bg-gray-100 rounded-md p-1"
+            >
+              <!-- producto 1 -->
+              <div
+                class="border dark:border-slate-800 border-gray-100 rounded-md shadow-sm dark:bg-slate-900 bg-white p-2 flex flex-col gap-0 relative w-50 md:w-80 lg:80 h-fit"
+              >
+                <!-- Badge de Descuento -->
+                <div
+                  class="absolute top-3 left-3 bg-orange-400 text-white text-[10px] font-bold px-2 py-1 z-10 rounded-md"
+                >
+                  MEGAPRECIO
+                </div>
+                <!-- img del producto -->
+                <div class="w-full h-full">
+                  <img
+                    src="https://www.ceupe.com/images/easyblog_articles/3461/b2ap3_large_productos-en-carrito-de-compra.jpg"
+                    alt="producto"
+                    class="object-contain rounded-md"
+                  />
+                </div>
+                <!-- Información -->
+                <div>
+                  <p
+                    class="text-[10px] dark:text-slate-400 text-gray-400 uppercase font-bold tracking-wider"
+                  >
+                    viveres
+                  </p>
+                  <h3
+                    class="text-sm font-semibold dark:text-slate-50 text-gray-700 line-clamp-2 leading-tight h-10"
+                  >
+                    Harina de Maíz Precocida P.A.N. 1kg
+                  </h3>
+                  <!-- Precios -->
+                  <div class="mt-2">
+                    <div class="flex items-center gap-2">
+                      <span class="text-lg font-black text-red-600">$1.10</span>
+                      <span
+                        class="text-xs dark:text-slate-400 text-gray-400 line-through"
+                        >$1.35</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Botón Añadir -->
+                <button
+                  class="w-full mt-4 bg-red-600 active:scale-95 transition-transform text-white font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md dark:shadow-none shadow-red-200"
+                >
+                  <i class="fa-solid fa-plus text-xs"></i>
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- publicidad -->
+          <section class="md:hidden lg:hidden">
+            <div class="relative w-full h-20">
+              <div
+                class="bg-linear-to-t from-black/80 to-black/20 via-transparent absolute w-full h-full rounded-md"
+              ></div>
+              <h4 class="absolute text-xl text-white font-bold bottom-2 left-2">
+                Vive mejor por menos
+              </h4>
+              <img
+                src="https://www.tendenciainternacional.com/wp-content/uploads/2025/06/BeFunky-collage01.jpg"
+                alt="publicidad"
+                class="w-full h-full object-cover rounded-md"
+              />
+            </div>
+          </section>
+        </main>
       </div>
-    </nav>
-  </aside>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
- <!--  <script src="js/factura.js"></script> -->
-  <script src="js/mode-dark.js"></script>
-  <!-- <script src="js/ui-interaciones.js"></script> -->
-  <script src="js/carrusel.js"></script>
-</body>
+      <!-- menu movil -->
+      <aside
+        class="bg-white dark:bg-slate-950 dark:border-slate-800 p-3 border-t border-gray-100 rounded-t-2xl shadow-[0_-5px_15px_rgba(0,0,0,0.05)] sticky bottom-0 z-50 md:hidden lg:hidden"
+      >
+        <nav class="flex justify-between items-center h-12">
+          <!-- Lado Izquierdo -->
+          <div class="flex flex-1 justify-around items-center">
+            <a
+              href="#"
+              class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors"
+            >
+              <i class="fa-solid fa-bread-slice text-lg"></i>
+              <span class="text-[10px] font-bold mt-1">Víveres</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors"
+            >
+              <i class="fa-solid fa-seedling text-lg"></i>
+              <span class="text-[10px] font-bold mt-1">Frutería</span>
+            </a>
+          </div>
 
+          <!-- Botón Central Flotante -->
+          <div class="relative -translate-y-2">
+            <a
+              href="src/pages/consultar.html"
+              class="bg-red-600 w-14 h-14 p-1 rounded-full flex flex-col justify-center items-center dark:text-slate-50 text-white shadow-lg shadow-red-200 dark:shadow-red-600 border-4 border-white dark:border-slate-300 active:scale-90 transition-transform"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="text-[10px] font-bold">Consultar</span>
+            </a>
+          </div>
+
+          <!-- Lado Derecho -->
+          <div class="flex flex-1 justify-around items-center">
+            <a
+              href="#"
+              class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors"
+            >
+              <i class="fa-solid fa-cheese text-lg"></i>
+              <span class="text-[10px] font-bold mt-1">Charcutería</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center dark:text-slate-50 text-gray-400 active:text-red-500 transition-colors"
+            >
+              <i class="fa-solid fa-drumstick-bite text-lg"></i>
+              <span class="text-[10px] font-bold mt-1">Carnicería</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!--  <script src="js/factura.js"></script> -->
+    <script src="src/js/mode-dark.js"></script>
+    <script src="src/js/ui-interaciones.js"></script>
+    <script src="src/js/carrusel.js"></script>
+  </body>
 </html>

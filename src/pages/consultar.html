@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icono -->
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- link css externo -->
+    <link rel="stylesheet" href="../../dist/css/output.css" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Consultar precio</title>
+  </head>
+  <body class="dark:bg-slate-900 bg-gray-100">
+    <!-- wrapper -->
+    <div class="max-w-md mx-auto min-h-screen flex flex-col">
+      <!-- Header-->
+      <header class="p-4 flex items-center gap-4">
+        <a href="../../index.html" class="text-red-600 dark:text-red-500">
+          <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <h1 class="font-bold text-gray-800 dark:text-slate-50">Volver</h1>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
+        <!-- inegresar datos del producto -->
+        <section class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <h1 class="uppercase text-orange-600 font-bold text-xs">
+              Consultar precio
+            </h1>
+            <button
+              class="text-xl dark:text-gray-300 text-gray-400 cursor-pointer dark:hover:text-gray-500"
+            >
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
+          <div
+            class="bg-white shadow dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-md p-2"
+          >
+            <div class="flex flex-col gap-2">
+              <label
+                for="IdPoducto"
+                class="dark:text-slate-50 font-bold text-red-500"
+                >Codigo de producto</label
+              >
+              <div class="relative">
+                <input
+                  id="IdPoducto"
+                  type="number"
+                  placeholder="7591222..."
+                  class="placeholder:italic dark:placeholder:text-gray-700 p-1 border dark:border-slate-800 dark:bg-slate-900 rounded-md focus:ring-2 focus:ring-red-500 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none w-full bg-gray-200 border-gray-300"
+                />
+                <button
+                  class="absolute right-3 bottom-1 text-xl text-orange-400"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- datos del producto -->
+        <section class="flex flex-col gap-2">
+          <div
+            class="bg-white shadow dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-md p-2 flex flex-col gap-2"
+          >
+            <!-- nombre y precio -->
+            <div class="flex flex-col gap-2">
+              <label
+                for="producto"
+                class="dark:text-slate-50 font-bold text-red-500"
+                >Nombre del producto</label
+              >
+              <input
+                id="producto"
+                type="text"
+                placeholder="Harina de maiz PAN"
+                class="placeholder:italic dark:placeholder:text-gray-700 p-1 border dark:border-slate-800 dark:bg-slate-900 bg-gray-200 border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 outline-none"
+              />
+            </div>
+            <div>
+              <label for="" class="dark:text-slate-50 font-bold text-orange-500"
+                >Precios
+                <span class="text-xs dark:text-gray-600 text-orange-300"
+                  >(sin IVA)</span
+                ></label
+              >
+              <div class="flex gap-2">
+                <div class="w-1/2">
+                  <label
+                    for=""
+                    class="dark:text-slate-50 font-bold text-red-500"
+                    >Bs</label
+                  >
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    class="placeholder:italic dark:placeholder:text-gray-700 p-1 border dark:border-slate-800 dark:bg-slate-900 bg-gray-200 border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 outline-none w-full"
+                    placeholder="Bs 500"
+                  />
+                </div>
+                <div class="w-1/2">
+                  <label
+                    for=""
+                    class="dark:text-slate-50 text-green-500 font-bold"
+                    >Dolares</label
+                  >
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    class="placeholder:italic dark:placeholder:text-gray-700 p-1 border dark:border-slate-800 dark:bg-slate-900 bg-gray-200 border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 outline-none w-full"
+                    placeholder="$2.50"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- aciones del usuario -->
+            <div class="p-1">
+              <button
+                class="border border-green-500 rounded-md bg-green-500 dark:bg-green-800 p-1.5 font-bold text-white cursor-pointer active:scale-95"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+        </section>
+        <p class="italic dark:text-zinc-700 text-gray-400">
+          El Inpuesto Valor Agregado(IVA), no esta includo en el precio
+          individual. Se calcula en el precio total de la compra.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
