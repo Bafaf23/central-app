@@ -1,6 +1,6 @@
 # Central-app
 
-![Logo](asset/svg/Logo_centralmadirense.svg)
+![Logo](src/asset/svg/Logo_centralmadirense.svg)
 
 ![Estructura](img.shields.io)
 ![Progreso](img.shields.io)
@@ -32,7 +32,7 @@ central-app/
 │   ├── asset/
 │   │   ├── img/
 │   │   ├── svg/
-|   |   |   ├── 
+|   |   |   ├──
 │   │   └── css/
 │   │       └── input.css  # Solo el archivo con las directivas @tailwind
 │   ├── js/
@@ -45,6 +45,7 @@ central-app/
 └── package.json           # Dependencias y scripts de compilación
 
 ```
+
 ## Authors
 
 - [@bafaf23](https://www.github.com/bafaf23)
