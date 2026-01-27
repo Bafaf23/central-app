@@ -1,109 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- link css externo -->
+    <link rel="stylesheet" href="../../dist/css/output.css" />
+    <!-- icono -->
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <script>
+      // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Central Madeirense | Tarjeta</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- fontawesone -->
-  <script src="https://kit.fontawesome.com/a74559d35e.js" crossorigin="anonymous"></script>
-  <!-- link css externo -->
-  <link rel="stylesheet" href="../../dist/css/output.css" />
-  <!-- icono -->
-  <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
-  <script>
-    // Bloque de ejecución inmediata para evitar parpadeos (FOUC)
-    if (
-      localStorage.getItem("color-theme") === "dark" ||
-      (!("color-theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  </script>
-  <title>Central Madeirense | Perfil</title>
-</head>
-
-<body class="dark:bg-slate-900">
-  <!-- wrapper -->
-  <div class="flex flex-col justify-between min-h-screen">
-    <!-- Header-->
-    <header class="p-4 flex items-center gap-4">
-      <a href="tarjetas.html" class="text-red-600 dark:text-red-500">
-        <i class="fa-solid fa-chevron-left"></i>
-      </a>
-      <h1 class="font-bold text-gray-800 dark:text-slate-50">Volver</h1>
-    </header>
-    <!-- Main -->
-    <main class="flex-1 pl-2 pr-2 mt-3 mb-2 flex flex-col gap-3">
-      <!-- Contenedor del Formulario -->
-      <section class="p-4 flex flex-col gap-6">
-        <!-- Vista Previa de Tarjeta (Visual) -->
-        <div
-          class="w-full aspect-[1.6/1] bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 shadow-lg shadow-red-500/20 text-white flex flex-col justify-between overflow-hidden relative">
-          <div class="flex justify-between items-start">
-            marca
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs uppercase tracking-widest opacity-70">Número de tarjeta</p>
-            <p id="card-number-preview" class="text-xl font-medium tracking-[0.2em]">**** **** **** ****</p>
-          </div>
-          <div class="flex justify-between items-end">
-            <div class="flex flex-col">
-              <p class="text-[10px] uppercase opacity-70">Titular</p>
-              <p id="card-name-preview" class="text-sm font-semibold truncate uppercase">Nombre Apellido</p>
+  <body class="dark:bg-slate-900">
+    <!-- wrapper -->
+    <div class="max-w-md mx-auto min-h-screen flex flex-col">
+      <!-- Header-->
+      <header class="p-4 flex items-center gap-2">
+        <a href="tarjetas.html" class="text-red-600 dark:text-red-500">
+          <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <h1 class="font-bold text-gray-800 dark:text-slate-50">Volver</h1>
+      </header>
+      <!-- Main -->
+      <main class="flex-1 flex flex-col">
+        <!-- Contenedor del Formulario -->
+        <section class="p-4 flex flex-col gap-2">
+          <!-- Vista Previa de Tarjeta (Visual) -->
+          <div
+            class="w-full aspect-[1.8/1] bg-linear-to-l from-red-600 via-orange-600 to-orange-600 rounded-2xl p-6 shadow-lg shadow-red-500/20 text-white flex flex-col justify-between overflow-hidden relative"
+          >
+            <div class="flex justify-between items-start">marca</div>
+            <div class="flex flex-col gap-1">
+              <p class="text-xs uppercase tracking-widest opacity-80">
+                Número de tarjeta
+              </p>
+              <p
+                id="card-number-preview"
+                class="text-xl font-medium tracking-[0.2em]"
+              >
+                **** **** **** ****
+              </p>
             </div>
-            <div class="flex flex-col items-end">
-              <p class="text-[10px] uppercase opacity-70">Vence</p>
-              <p id="card-expiry-preview" class="text-sm font-semibold">MM/AA</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Campos del Formulario -->
-        <form class="flex flex-col gap-4">
-          <!-- Nombre del Titular -->
-          <div class="flex flex-col gap-2">
-            <label class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1">Nombre en la
-              tarjeta</label>
-            <input type="text" placeholder="Ej. BRYANT PERAZA"
-              class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100" />
-          </div>
-          <!-- Número de Tarjeta -->
-          <div class="flex flex-col gap-2">
-            <label class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1">Número de tarjeta</label>
-            <div class="relative">
-              <input type="text" maxlength="19" placeholder="0000 0000 0000 0000"
-                class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100" />
-              <i class="fa-solid fa-credit-card absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <div class="flex justify-between items-end">
+              <div class="flex flex-col">
+                <p class="text-[10px] uppercase opacity-70">Titular</p>
+                <p
+                  id="card-name-preview"
+                  class="text-sm font-semibold truncate uppercase"
+                >
+                  Nombre Apellido
+                </p>
+              </div>
+              <div class="flex flex-col items-end">
+                <p class="text-[10px] uppercase opacity-70">Vence</p>
+                <p id="card-expiry-preview" class="text-sm font-semibold">
+                  MM/AA
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Fecha y CVV -->
-          <div class="grid grid-cols-2 gap-4">
+          <!-- Campos del Formulario -->
+          <form class="flex flex-col gap-4">
+            <!-- Nombre del Titular -->
             <div class="flex flex-col gap-2">
-              <label class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1">Vencimiento</label>
-              <input type="text" placeholder="MM/AA" maxlength="5"
-                class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100 text-center" />
+              <label
+                class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1"
+                >Nombre en la tarjeta</label
+              >
+              <input
+                type="text"
+                placeholder="Ej. BRYANT PERAZA"
+                class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100"
+              />
             </div>
+            <!-- Número de Tarjeta -->
             <div class="flex flex-col gap-2">
-              <label class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1">CVV</label>
-              <input type="password" placeholder="***" maxlength="3"
-                class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100 text-center" />
+              <label
+                class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1"
+                >Número de tarjeta</label
+              >
+              <div class="relative">
+                <input
+                  type="text"
+                  maxlength="19"
+                  placeholder="0000 0000 0000 0000"
+                  class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100"
+                />
+                <i
+                  class="fa-solid fa-credit-card absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+                ></i>
+              </div>
             </div>
-          </div>
 
-          <!-- Botón Guardar -->
-          <button type="submit"
-            class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-red-500/30 active:scale-95">
-            Guardar Tarjeta
-          </button>
-        </form>
-      </section>
-    </main>
-  </div>
-  <script src="../js/mode-dark.js"></script>
-</body>
+            <!-- Fecha y CVV -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1"
+                  >Vencimiento</label
+                >
+                <input
+                  type="text"
+                  placeholder="MM/AA"
+                  maxlength="5"
+                  class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100 text-center"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase ml-1"
+                  >CVV</label
+                >
+                <input
+                  type="password"
+                  placeholder="***"
+                  maxlength="3"
+                  class="w-full p-4 bg-white dark:bg-slate-950 border border-gray-100 dark:border-slate-800 rounded-2xl outline-none focus:border-red-500 dark:focus:border-red-500 transition-colors text-gray-800 dark:text-slate-100 text-center"
+                />
+              </div>
+            </div>
 
+            <!-- Botón Guardar -->
+            <button
+              type="submit"
+              class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-red-500/30 active:scale-95"
+            >
+              Guardar Tarjeta
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="../js/mode-dark.js"></script>
+  </body>
 </html>
