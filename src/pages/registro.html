@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../dist/css/output.css" />
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <title>Registrate</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-slate-900">
+    <main
+      class="flex flex-col gap-2 h-screen p-2 justify-center md:mx-auto md:w-2/3"
+    >
+      <div class="flex flex-col gap-1 p-2 justify-end">
+        <a
+          href="login.html"
+          class="text-sm text-orange-400 dark:text-slate-400 ml-1"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+          Inicar sesion
+        </a>
+      </div>
+      <form
+        action="#"
+        class="flex flex-col gap-2 p-4 bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-gray-100 dark:border-slate-800 md:flex-row"
+      >
+        <header
+          class="text-center text-2xl font-bold text-acento gap-2 md:w-1/2"
+        >
+          <div class="flex flex-col items-center justify-center">
+            <div
+              class="flex flex-col p-5 overflow-hidden bg-orange-100 rounded-full"
+            >
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+        </header>
+        <div>
+          <div class="text-center">
+            <h2 class="text-xl font-bold text-orange-500">
+              Registrate en la app
+            </h2>
+            <p class="text-gray-400 text-xs">Es gratis!</p>
+          </div>
+          <div class="flex flex-col gap-1 p-2 w-full">
+            <label
+              for="typeDocument"
+              class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+              >Tipo de Documento</label
+            >
+
+            <div class="flex gap-2">
+              <select
+                name="typeDocument"
+                id="typeDocument"
+                class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-fit text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+              >
+                <option value="cedula">C</option>
+                <option value="extranjeria">E</option>
+                <option value="pasap orte">P</option>
+                <option value="juridico">J</option>
+              </select>
+
+              <input
+                type="text"
+                id="documentNumber"
+                name="documentNumber"
+                class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+              />
+            </div>
+          </div>
+          <div class="flex flex-row gap-1 p-2 w-full">
+            <div class="w-1/2">
+              <label
+                for="name"
+                class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+                >Nombre</label
+              >
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+                />
+              </div>
+            </div>
+
+            <div class="w-1/2">
+              <label
+                for="lastName"
+                class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+                >Apellido</label
+              >
+              <div>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 p-2 w-full">
+            <label
+              for="email"
+              class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+              >Correo Electronico</label
+            >
+
+            <div class="flex gap-2">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 p-2 w-full">
+            <label
+              for="passwordUser"
+              class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+              >Contraseña</label
+            >
+            <div class="flex gap-2 relative">
+              <input
+                type="password"
+                id="passwordUser"
+                name="passwordUser"
+                class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+              />
+              <span
+                href="#"
+                class="absolute right-3 bottom-1.5 text-xl text-orange-400"
+              >
+                <i class="fa-solid fa-eye text-orange-400 hidden"></i>
+                <i class="fa-solid fa-eye-slash text-orange-400"></i>
+              </span>
+            </div>
+          </div>
+          <button
+            class="bg-red-600 text-white p-2 rounded-md active:bg-red-700 transition-all w-full"
+          >
+            Registrate
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

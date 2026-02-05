@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesone -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../dist/css/output.css" />
+    <link rel="icon" href="../asset/svg/Logo_centralmadirense.svg" />
+    <title>Inica sesion</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-slate-900">
+    <main class="flex flex-col gap-2 justify-center h-screen p-2">
+      <form
+        action="#"
+        class="flex flex-col gap-2 p-4 bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-gray-100 dark:border-slate-800 md:mx-auto md:w-2/3 md:flex-row"
+      >
+        <div class="flex flex-col items-center justify-center md:w-1/1">
+          <div class="flex flex-col h-30 md:h-full md:w-full overflow-hidden">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnANtNRk0tdhnkfd0kYaT7rXkDO65LEqb8xQ&s"
+              alt="logo"
+              class="w-full h-full object-cover rounded-full md:rounded-md"
+            />
+          </div>
+        </div>
+
+        <div class="md:w-full flex flex-col justify-center">
+          <header class="text-center text-2xl font-bold text-acento">
+            Inicia sesion
+          </header>
+          <div class="flex flex-col gap-1 p-2">
+            <label
+              for="user"
+              class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+              >Usuario</label
+            >
+            <input
+              type="text"
+              id="password"
+              name="password"
+              class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+            />
+          </div>
+          <div class="flex flex-col gap-1 p-2">
+            <label
+              for="password"
+              class="text-sm font-bold text-gray-500 dark:text-slate-400 ml-1"
+              >Password</label
+            >
+            <div class="relative">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="p-2.5 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl w-full text-sm dark:text-slate-100 focus:ring-2 focus:ring-red-500 outline-none"
+              />
+              <a
+                href="#"
+                class="absolute right-3 bottom-1.5 text-xl text-orange-400"
+              >
+                <i class="fa-solid fa-eye text-orange-400 hidden"></i>
+                <i class="fa-solid fa-eye-slash text-orange-400"></i>
+              </a>
+            </div>
+          </div>
+          <button
+            class="bg-red-600 text-white p-2 rounded-md active:bg-red-700 transition-all w-full"
+          >
+            Iniciar sesion
+          </button>
+          <div class="flex flex-col gap-1 p-2 mt-5">
+            <a
+              href="registro.html"
+              class="text-sm text-orange-400 dark:text-slate-400 ml-1"
+            >
+              Registrarse
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a
+              href="olvido-password.html"
+              class="text-sm text-orange-400 dark:text-slate-400 ml-1"
+            >
+              <span>Olvidaste tu contraseña?</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
